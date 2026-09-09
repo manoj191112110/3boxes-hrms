@@ -1,0 +1,41 @@
+{
+  "code": 200,
+  "data": {
+    "description": "Smarthr - Bootstrap Admin Template",
+    "external": {
+      "apple-touch-icon": {
+        "https://smarthr.co.in/demo/html/assets/img/apple-touch-icon.png": {
+          "sizes": "180x180"
+        }
+      },
+      "icon": {
+        "https://smarthr.co.in/demo/html/assets/img/favicon.png": {
+          "type": "image/x-icon"
+        }
+      }
+    },
+    "html": "<html lang=\"en\"><head>\n\t<meta charset=\"utf-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=0\">\n\t<meta name=\"description\" content=\"Smarthr - Bootstrap Admin Template\">\n\t<meta name=\"keywords\" content=\"admin, estimates, bootstrap, business, html5, responsive, Projects\">\n\t<meta name=\"author\" content=\"Dreams technologies - Bootstrap Admin Template\">\n\t<meta name=\"robots\" content=\"noindex, nofollow\">\n\t<title>Smarthr Admin Template</title>\n\n\t<!-- Favicon -->\n\t<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"assets/img/favicon.png\">\n\n\t<!-- Apple Touch Icon -->\n\t<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"assets/img/apple-touch-icon.png\">\n\n\t<!-- Bootstrap CSS -->\n\t<link rel=\"stylesheet\" href=\"assets/css/bootstrap.min.css\">\n\n\t<!-- Feather CSS -->\n\t<link rel=\"stylesheet\" href=\"assets/plugins/icons/feather/feather.css\">\n\n\t<!-- Tabler Icon CSS -->\n    <link rel=\"stylesheet\" href=\"assets/plugins/tabler-icons/tabler-icons.min.css\">\n\n\t<!-- Fontawesome CSS -->\n\t<link rel=\"stylesheet\" href=\"assets/plugins/fontawesome/css/fontawesome.min.css\">\n\t<link rel=\"stylesheet\" href=\"assets/plugins/fontawesome/css/all.min.css\">\n\n\t<!-- Main CSS -->\n\t<link rel=\"stylesheet\" href=\"assets/css/style.css\">\n\n</head>\n\n<body class=\"bg-linear-gradiant\">\n\n\t\n\n\t<!-- Main Wrapper -->\n\t<div class=\"main-wrapper\">\n\n\t\t<div class=\"container\">\n\t\t\t<div class=\"row justify-content-center\">\n\t\t\t\t<div class=\"col-md-5\">\n\t\t\t\t\t<form action=\"index.html\">\n\t\t\t\t\t\t<div class=\"d-flex flex-column justify-content-between vh-100\">\n\t\t\t\t\t\t\t<div class=\" mx-auto p-4 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"assets/img/logo.svg\" class=\"img-fluid\" alt=\"Logo\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"card\">\n\t\t\t\t\t\t\t\t<div class=\"card-body p-4\">\n\t\t\t\t\t\t\t\t\t<div class=\" mb-4 text-center\">\n\t\t\t\t\t\t\t\t\t\t<h2 class=\"mb-2\">Welcome back! </h2>\n\t\t\t\t\t\t\t\t\t\t<img src=\"assets/img/profiles/avatar-12.jpg\" alt=\"img\" class=\"img-fluid avatar avatar-xxl rounded-pill my-3\">\n\t\t\t\t\t\t\t\t\t\t<h6 class=\"text-dark\">Adrian Davies</h6>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"mb-3 \">\n\t\t\t\t\t\t\t\t\t\t<label class=\"form-label\">Password</label>\n\t\t\t\t\t\t\t\t\t\t<div class=\"pass-group\">\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"password\" class=\"pass-input form-control\" placeholder=\"Enter Your Password\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"ti toggle-password ti-eye-off\"></span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-primary w-100\">Sign In</button>\n\t\t\t\t\t\t\t\t</div>\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"p-4 text-center\">\n\t\t\t\t\t\t\t\t<div class=\"d-flex justify-content-center\">\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"me-3 text-gray-9\">Terms &amp; Condition</a>\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"me-3 text-gray-9\">Privacy</a>\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"me-3 text-gray-9\">Help</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"p-2 text-center\">\n\t\t\t\t\t\t\t\t\t<p class=\"mb-0 text-gray-9\">Copyright © 2026 - SmartHR</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<!-- /Main Wrapper -->\n\n\t<!-- jQuery -->\n\t<script src=\"assets/js/jquery-3.7.1.min.js\"></script>\n\n\t<!-- Bootstrap Core JS -->\n\t<script src=\"assets/js/bootstrap.bundle.min.js\"></script>\n\n\t<!-- Feather Icon JS -->\n\t<script src=\"assets/js/feather.min.js\"></script>\n\n\t<!-- Custom JS -->\n\t<script src=\"assets/js/script.js\"></script><div class=\"sidebar-overlay\"></div>\n\n<script defer=\"\" src=\"https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496\" integrity=\"sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==\" data-cf-beacon=\"{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;d05194593ce14c8fa5c20a9737ff5d07&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}\" crossorigin=\"anonymous\"></script>\n\n\n</body></html>",
+    "httpStatus": 200,
+    "httpStatusText": "OK",
+    "metadata": {
+      "author": "Dreams technologies - Bootstrap Admin Template",
+      "description": "Smarthr - Bootstrap Admin Template",
+      "keywords": "admin, estimates, bootstrap, business, html5, responsive, Projects",
+      "lang": "en",
+      "robots": "noindex, nofollow",
+      "viewport": "width=device-width, initial-scale=1.0, user-scalable=0"
+    },
+    "publishedTime": "Sat, 09 May 2026 07:23:01 GMT",
+    "title": "Smarthr Admin Template",
+    "url": "https://smarthr.co.in/demo/html/lock-screen.html",
+    "usage": {
+      "tokens": 1136
+    }
+  },
+  "meta": {
+    "usage": {
+      "tokens": 1136
+    }
+  },
+  "status": 20000
+}

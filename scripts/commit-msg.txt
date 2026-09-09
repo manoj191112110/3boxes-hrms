@@ -1,0 +1,72 @@
+fix(super-admin): empty overview and group companies data + dashboard bug + access guard
+
+Problem: "In super admin login - tenant admin - overview and group companies data is not visible - shows empty".
+
+Three independent root causes:
+
+1. Dashboard "Total Companies" stat was counting GROUPS, not companies.
+   /api/super-admin/dashboard used prisma.companyGroup.count() for the
+   totalCompanies field, so the KPI card showed the group-company count
+   under a misleading "Total Companies" label.
+
+2. Tenants created before commit c319fe3 (which added auto-group-create)
+   had ZERO group companies. When super admin clicked View on such a
+   tenant, the Company Groups section was hidden (because
+   viewingTenant.companyGroups.length === 0). Same on tenant-admin
+   Overview and Group Companies tabs: the list rendered as empty.
+
+3. The Tenant Admin sidebar link was visible to super_admin. The
+   /tenant-admin/* pages assume user.tenantId exists; super_admin does
+   not have one, so fetchTenantInfo returned early and the Overview tab
+   showed "No tenant information available". The Group Companies tab on
+   the same page calls /api/company-groups which (for super_admin)
+   returns groups across ALL tenants, but the page header still said
+   "your tenant", which was misleading.
+
+Fixes:
+- /api/super-admin/dashboard: totalCompanies now uses prisma.company.count()
+  (correct). Also expose totalGroupCompanies as a separate field so the UI
+  can render BOTH stats. The super-admin dashboard now shows two cards:
+  "Total Group Companies" (parent groups) and "Total Companies" (inducted
+  under groups), each with explanatory subtext.
+
+- /api/super-admin/dashboard: when totalTenants === 0, the dashboard now
+  shows a prominent emerald CTA banner explaining that the platform has
+  no tenants yet, with a direct "Load Sample Data" button.
+
+- /api/tenants/[id] GET: added ensureDefaultGroup() helper. Before fetching
+  the rich tenant view, we ensure the tenant has at least one default
+  group company named after the tenant itself (per the user's clarified
+  hierarchy: "the group company name and parent tenant are same").
+  Idempotent: skips if the tenant already has any group. This auto-heals
+  legacy tenants that were created before the auto-group-create feature.
+
+- /api/tenants/[id] GET: wrapped every prisma call in a safe() helper
+  (same pattern as /api/me/context). A single failed include no longer
+  500s the whole endpoint. Frontend never crashes on cg.companies.length.
+
+- /api/company-groups GET: same safe() pattern plus same auto-heal. Before
+  listing groups, ensure every tenant that will appear in the result has
+  at least one default group. Fixes both the super-admin Group Companies
+  tab and the tenant-admin Group Companies tab.
+
+- /tenant-admin/page.tsx: added access guard. If user.role === "super_admin",
+  show a helpful redirect card pointing to /super-admin instead of
+  attempting to fetch tenant info. If user.role === "tenant_admin" but
+  user.tenantId is missing, show an "account not linked to a tenant" card.
+  Both guards are placed AFTER all useState/useCallback/useEffect hooks so
+  React's rules-of-hooks are preserved.
+
+- /tenant-admin/companies/page.tsx and /tenant-admin/group-companies/page.tsx:
+  same access guard for super_admin (redirects to /super-admin with a
+  contextual explainer).
+
+- src/components/Sidebar.tsx: restricted "Tenant Admin", "Companies",
+  "View Group Companies", and "Company RBAC" links to roles: ["tenant_admin"]
+  only. Restricted "RBAC Management" to roles: ["super_admin"]. Previously
+  these had moduleKey="tenant_admin"/"rbac" which let super admins see
+  them and click into empty pages.
+
+Verified: npx tsc --noEmit (no new errors), npx next build (compiles cleanly).
+
+Closes: "in super admin login - tenant admin - overview and group companies data is not visible - shows empty"

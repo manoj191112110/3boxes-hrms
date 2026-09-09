@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="Smarthr - Bootstrap Admin Template">
+    <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Add Promotion - HRMS</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!-- Lineawesome CSS -->
+    <link rel="stylesheet" href="assets/css/line-awesome.min.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+    <!-- Tagsinput CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <div class="header">
+
+            <!-- Logo -->
+            <div class="header-left">
+                <a href="inbox.html" class="logo">
+                    <!-- <img src="assets/img/logo.png" width="40" height="40" alt=""> -->
+                    <img src="assets/img/White logo - no background.png" style="max-width: 11rem; height: auto;" alt="Logo">
+                </a>
+            </div>
+            <!-- /Logo -->
+
+            <a id="toggle_btn" href="javascript:void(0);">
+                <span class="bar-icon">
+						<span></span>
+                <span></span>
+                <span></span>
+                </span>
+            </a>
+
+            <!-- Header Title -->
+            <!-- <div class="page-title-box">
+                <h3>360HRIS</h3>
+            </div> -->
+            <!-- /Header Title -->
+
+            <a id="mobile_btn" class="mobile_btn" href="#sidebar"><i class="fa fa-bars"></i></a>
+
+            <!-- Header Menu -->
+            <ul class="nav user-menu">
+
+                <!-- Search -->
+                <li class="nav-item">
+                    <div class="top-nav-search">
+                        <a href="javascript:void(0);" class="responsive-search">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <form action="search.html">
+                            <input class="form-control" type="text" placeholder="Search here">
+                            <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </li>
+                <!-- /Search -->
+                <!-- Nav bar start -->
+                <!-- <li class="nav-item dropdown has-arrow flag-nav ">
+                    <a href="master.html" id="menue-toggle" class="nav-link" data-toggle=""><i class="fa fa-cube" aria-hidden="true"></i><span>Modules</span> </a>
+                </li>
+                <li class="nav-item  has-arrow flag-nav ">
+                    <a href="dashBoard.html" class="nav-link" data-toggle=""><i class="fa fa-tachometer" aria-hidden="true"></i><span>Dashboard</span></a>
+                </li> -->
+                <!-- /Nav bar End -->
+                <!-- Flag -->
+                <li class="nav-item dropdown has-arrow flag-nav">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+                        <img src="assets/img/flags/us.png" alt="" height="20"> <span>English</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="assets/img/flags/us.png" alt="" height="16"> English
+                        </a>
+                        <!-- <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="assets/img/flags/fr.png" alt="" height="16"> French
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="assets/img/flags/es.png" alt="" height="16"> Spanish
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="assets/img/flags/de.png" alt="" height="16"> German
+                        </a> -->
+                    </div>
+                </li>
+                <!-- /Flag -->
+
+                <!-- Notifications -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i> <span class="badge badge-pill">3</span>
+                    </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span class="notification-title">Notifications</span>
+                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                        </div>
+                        <div class="noti-content">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">
+													<img alt="" src="assets/img/profiles/avatar-02.jpg">
+												</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+                                                <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">
+													<img alt="" src="assets/img/profiles/avatar-03.jpg">
+												</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+                                                <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">
+													<img alt="" src="assets/img/profiles/avatar-06.jpg">
+												</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+                                                <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">
+													<img alt="" src="assets/img/profiles/avatar-17.jpg">
+												</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+                                                <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="activities.html">
+                                        <div class="media">
+                                            <span class="avatar">
+													<img alt="" src="assets/img/profiles/avatar-13.jpg">
+												</span>
+                                            <div class="media-body">
+                                                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+                                                <p class="noti-time"><span class="notification-time">2 days ago</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="activities.html">View all Notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- /Notifications -->
+
+                <!-- Message Notifications -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="fa fa-comment-o"></i> <span class="badge badge-pill">8</span>
+                    </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span class="notification-title">Messages</span>
+                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                        </div>
+                        <div class="noti-content">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="chat.html">
+                                        <div class="list-item">
+                                            <div class="list-left">
+                                                <span class="avatar">
+														<img alt="" src="assets/img/profiles/avatar-09.jpg">
+													</span>
+                                            </div>
+                                            <div class="list-body">
+                                                <span class="message-author">Richard Miles </span>
+                                                <span class="message-time">12:28 AM</span>
+                                                <div class="clearfix"></div>
+                                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="chat.html">
+                                        <div class="list-item">
+                                            <div class="list-left">
+                                                <span class="avatar">
+														<img alt="" src="assets/img/profiles/avatar-02.jpg">
+													</span>
+                                            </div>
+                                            <div class="list-body">
+                                                <span class="message-author">John Doe</span>
+                                                <span class="message-time">6 Mar</span>
+                                                <div class="clearfix"></div>
+                                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="chat.html">
+                                        <div class="list-item">
+                                            <div class="list-left">
+                                                <span class="avatar">
+														<img alt="" src="assets/img/profiles/avatar-03.jpg">
+													</span>
+                                            </div>
+                                            <div class="list-body">
+                                                <span class="message-author"> Tarah Shropshire </span>
+                                                <span class="message-time">5 Mar</span>
+                                                <div class="clearfix"></div>
+                                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="chat.html">
+                                        <div class="list-item">
+                                            <div class="list-left">
+                                                <span class="avatar">
+														<img alt="" src="assets/img/profiles/avatar-05.jpg">
+													</span>
+                                            </div>
+                                            <div class="list-body">
+                                                <span class="message-author">Mike Litorus</span>
+                                                <span class="message-time">3 Mar</span>
+                                                <div class="clearfix"></div>
+                                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="chat.html">
+                                        <div class="list-item">
+                                            <div class="list-left">
+                                                <span class="avatar">
+														<img alt="" src="assets/img/profiles/avatar-08.jpg">
+													</span>
+                                            </div>
+                                            <div class="list-body">
+                                                <span class="message-author"> Catherine Manseau </span>
+                                                <span class="message-time">27 Feb</span>
+                                                <div class="clearfix"></div>
+                                                <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="chat.html">View all Messages</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- /Message Notifications -->
+
+                <li class="nav-item dropdown has-arrow main-drop">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <span class="user-img"><img src="assets/img/profiles/avatar-21.jpg" alt="">
+							<span class="status online"></span></span>
+                        <span>Admin</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="profile.html">My Profile</a>
+                        <a class="dropdown-item" href="settings.html">Settings</a>
+                        <a class="dropdown-item" href="login.html">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <!-- /Header Menu -->
+
+            <!-- Mobile Menu -->
+            <div class="dropdown mobile-user-menu">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </div>
+            <!-- /Mobile Menu -->
+
+        </div>
+        <!-- /Header -->
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title"> 
+                            <span>Main</span>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a class="active" href="index.html">Admin Dashboard</a></li>
+                                <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="la la-cubes"></i> <span> Modules</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a  href="dashBoard.html">Standard</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="la la-cube"></i> <span> Apps</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="chat.html">Chat</a></li>
+                                <li class="submenu">
+                                    <a href="#"><span> Calls</span> <span class="menu-arrow"></span></a>
+                                    <ul style="display: none;">
+                                        <li><a href="voice-call.html">Voice Call</a></li>
+                                        <li><a href="video-call.html">Video Call</a></li>
+                                        <li><a href="outgoing-call.html">Outgoing Call</a></li>
+                                        <li><a href="incoming-call.html">Incoming Call</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="events.html">Calendar</a></li>
+                                <!-- <li><a href="contacts.html">Contacts</a></li> -->
+                                <li><a href="inbox.html">Email</a></li>
+                                <li><a href="file-manager.html">File Manager</a></li>
+                                <li><a href="#">Awards</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="submenu">
+                            <a href="#"><i class="la la-cube"></i> <span> Apps</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="chat.html">Chat</a></li>
+                                <li class="submenu">
+                                    <a href="#"><span> Calls</span> <span class="menu-arrow"></span></a>
+                                    <ul style="display: none;">
+                                        <li><a href="voice-call.html">Voice Call</a></li>
+                                        <li><a href="video-call.html">Video Call</a></li>
+                                        <li><a href="outgoing-call.html">Outgoing Call</a></li>
+                                        <li><a href="incoming-call.html">Incoming Call</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="events.html">Calendar</a></li>
+                                <li><a href="contacts.html">Contacts</a></li>
+                                <li><a href="inbox.html">Email</a></li>
+                                <li><a href="file-manager.html">File Manager</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li class="menu-title">
+                            <span>Master</span>
+                        </li> -->
+                        <li class="menu-title">
+                            <span>Employees</span>
+                        </li>
+                        <li class="submenu">
+                            <a href="#" class="noti-dot"><i class="la la-user"></i> <span> Employees</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="addActiveEmp.html">Add Employees</a></li>
+                                <li><a href="employees.html">Active Employees</a></li>
+                                <li><a href="employeesIn.html">Inactive Employees</a></li>
+                                <li><a href="inviteEmployee.html">Invite Employees </a></li>
+                                <li><a href="approverConfigView.html">Approver Configuration </a></li>
+                                <li><a href="profile.html">My Profile</a></li>
+                                <li><a href="#">My ORG chart</a></li>
+                                <!-- <li><a href="">Update My Profile</a></li>
+                                <li><a href="">My Approvals</a></li>
+                                <li><a href="">upload/import through excel</a></li> -->
+                                <li><a href="">Rejoin Employee</a></li>
+                                <li><a href="bulkUpload.html">Bulk upload</a></li>
+                                <li><a class="active" href="promotion.html">Promotion</a></li>
+                                <li><a href="transfer.html">Transfer</a></li>
+                                <li><a href="resignation.html">Resignation</a></li>
+                                <li><a href="termination.html">Termination</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Sidebar -->
+
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+
+            <!-- Page Content -->
+            <div class="content container-fluid">
+
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="page-title">Promotion</h3>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="dashBoard.html">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Employees</li>
+                                <li class="breadcrumb-item active">Add Promotion</li>
+                            </ul>
+                        </div>
+                        <!-- <div class="col-auto float-right ml-auto">
+                            <a href="addPromotion.html" class="btn add-btn" data-toggle="" data-target=""><i class="fa fa-plus"></i> Add Promotion</a>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- /Page Header -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title mb-0">Employee Information</h4>
+                            </div>
+                            <div class="card-body">
+                                <!-- <h4 class="card-title">Personal Information</h4> -->
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Comapny Name<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8">
+                                                    <select class="select">
+                                                        <option>Select Comapny Name</option>
+                                                        <option value="1">ABC</option>
+                                                        <option value="2">XYZ</option>
+                                                        <option value="1">ABC</option>
+                                                        <option value="2">XYZ</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Salutation<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8">
+                                                    <select class="select" disabled>
+                                                        <option>Select Salutation</option>
+                                                        <option value="1">Mr.</option>
+                                                        <option value="2">Mrs.</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">First Name<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8">
+                                                    <input class="form-control" type="text" value="Web Developer" placeholder="Jitendra" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Middle Name<span class="text-danger"> </span></label>
+                                                <div class="col-lg-8 cal-icon">
+                                                    <input class="form-control datetimepicker" type="text" value="Web Developer" placeholder="Vallabhabhai" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Last Name<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8 cal-icon">
+                                                    <input class="form-control datetimepicker" type="text" value="Web Developer" placeholder="Adhiya" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Suffix<span class="text-danger"> </span></label>
+                                                <div class="col-lg-8 cal-icon">
+                                                    <input class="form-control datetimepicker" type="text" value="Web Developer" placeholder="Max.50 Chars" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Alias<span class="text-danger"> </span></label>
+                                                <div class="col-lg-8 cal-icon">
+                                                    <input class="form-control datetimepicker" type="text" value="Web Developer" placeholder="Max.50 Chars" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Work Location<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8">
+                                                    <select class="select">
+                                                        <option>Select Work Location</option>
+                                                        <option value="1">Ahemdabad</option>
+                                                        <option value="2">Allahabad</option>
+                                                        <option value="3">Aurangabad</option>
+                                                        <option value="4">Indore</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Employee Code<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8 cal-icon">
+                                                    <input class="form-control datetimepicker" type="text" value="Web Developer" placeholder="8" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Gender<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8 ">
+                                                    <select class="select" disabled>
+                                                        <option>Select Gender</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Female</option>													
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date Of Birth<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8 cal-icon">
+                                                    <input class="form-control datetimepicker" type="text" value="Web Developer" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Marital Status<span class="text-danger"> </span></label>
+                                                <div class="col-lg-8">
+                                                    <select class="select" disabled>
+                                                        <option>Select Marital Status</option>
+                                                        <option value="1">Married</option>
+                                                        <option value="2">Single</option>													
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Type<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8">
+                                                    <select class="select">
+                                                        <option>Select Type</option>
+                                                        <option value="1">Employee Promotion</option>
+                                                        <option value="2">Employee Transfer</option>													
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Effective Formdate<span class="text-danger"> *</span></label>
+                                                <div class="col-lg-8 cal-icon">
+                                                    <input class="form-control datetimepicker" type="text" value="Web Developer">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="text-center submit-section">
+                                        <button type="submit" class="btn btn-primary submit-btn">Save</button>
+                                    </div> -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <h4 class="card-title mb-0">Current Work Information</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="#">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">Employee Type<span class="text-danger"> *</span></label>
+                                        <div class="col-lg-8">
+                                            <select class="select">
+                                                <option>Select Employee Type</option>
+                                                <option value="1">Employee</option>
+                                                <option value="2">Worker</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">Department<span class="text-danger"> *</span></label>
+                                        <div class="col-lg-8">
+                                            <select class="select">
+                                                <option>Select Department</option>
+                                                <option value="1">Accounts & Finance</option>
+                                                <option value="2">IT</option>
+                                                <option value="3">HR & Admin</option>
+                                                <option value="4">Director</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">Sub Department<span class="text-danger"> *</span></label>
+                                        <div class="col-lg-8">
+                                            <select class="select">
+                                                <option>Select Sub Department</option>
+                                                <option value="1">Accounts</option>
+                                                <option value="2">Director</option>
+                                                <option value="3">Purchase</option>
+                                                <option value="4">Planning</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">Designation<span class="text-danger"> *</span></label>
+                                        <div class="col-lg-8">
+                                            <select class="select">
+                                                <option>Select Designation</option>
+                                                <option value="1">Officer</option>
+                                                <option value="2">Assistant Manager</option>
+                                                <option value="3">Operator</option>
+                                                <option value="4">Programmer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <h4 class="card-title mb-0">Promoted Work Information</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="#">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">Grade<span class="text-danger"> *</span></label>
+                                        <div class="col-lg-8">
+                                            <select class="select" disabled>
+                                                <option>Select Grade</option>
+                                                <option value="1">M1</option>
+                                                <!-- <option value="2"></option>
+                                                <option value="3"></option>
+                                                <option value="4"></option> -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">Employment Status<span class="text-danger"> *</span></label>
+                                        <div class="col-lg-8">
+                                            <select class="select">
+                                                <option>Select Employment Status</option>
+                                                <option value="1">Probation</option>
+                                                <option value="2">Training</option>
+                                                <option value="3">Confirmed</option>
+                                                <option value="4">Resigned</option>
+                                                <option value="5">Resigned withdrowal</option>
+                                                <option value="6">Apprentice</option>
+                                                <option value="7">Not Confirmed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">Employee Role<span class="text-danger"> *</span></label>
+                                        <div class="col-lg-8">
+                                            <select class="select">
+                                                <option>Select Employee Role</option>
+                                                <option value="1">Admin Line</option>
+                                                <option value="2">User</option>
+                                                <option value="3">Super Admin</option>
+                                                <option value="4">Managing Director</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label">Confirmation date<span class="text-danger"> </span></label>
+                                        <div class="col-lg-8 cal-icon">
+                                            <input class="form-control datetimepicker" type="text" value="Web Developer">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-section ">
+                    <button class="btn btn-primary submit-btn ">Save</button>
+                    <!-- <button class="btn btn-primary submit-btn ">Reset</button> -->
+                </div>
+                <!-- Add Branch -->
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        Annual Leave
+                        <div class="card leave-box" id="leave_annual">
+                            <div class="card-body">
+                                <div class="h3 card-title with-switch">
+                                    Create
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch_annual" checked>
+                                        <label class="onoffswitch-label" for="switch_annual">
+												<span class="onoffswitch-inner"></span>
+												<span class="onoffswitch-switch"></span>
+											</label>
+                                    </div>
+                                </div>
+                                <div class="leave-item">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Company Name</label>
+                                            <input type="text" class="form-control" placeholder="Dhanuka Laboratories Limited" id="exampleInputEmail1" aria-describedby="emailHelp" disabled>
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label>Region Name<span class="text-danger">*</span></label><br>
+                                            <select class="select ">
+                                                <option>Select Region Name</option>
+                                                <option>North</option>
+                                                <option>South</option>
+                                                <option>East</option>
+                                                <option>West</option>
+                                            </select>
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Work Location Name<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Work Location Code</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div><br>
+                                        <div class="form-group ">
+                                            <label>Estimated Date <span class="text-danger"></span></label>
+                                            <div class="cal-icon">
+                                                <input class="form-control datetimepicker" type="text">
+                                            </div>
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">ESI Code No</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">ESI Work Location Office</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">ESI Contact No</label>
+                                            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">PT Circle</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Address</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label>Country <span class=" text-danger "></span></label>
+                                            <select class="select ">
+                                                    <option>Select Country</option>
+                                                    <option>INDIA</option>
+                                                    <option>USA</option>
+                                            </select>
+                                        </div><br>
+                                        <div class="form-group option ">
+                                            <label>State <span class="text-danger "></span></label>
+                                            <select class="select ">
+                                                    <option>Select State</option>
+                                                    
+                                            </select>
+                                        </div><br>
+                                        <div class="form-group option ">
+                                            <label>City <span class="text-danger "></span></label>
+                                            <select class="select ">
+                                                    <option>Select City</option>
+                                                   
+                                            </select>
+                                        </div><br>
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1 ">Zip Code</label>
+                                            <input type="number " class="form-control " id="exampleInputEmail1 " aria-describedby="emailHelp ">
+                                        </div><br>
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1 ">EPF Code No</label>
+                                            <input type="text " class="form-control " id="exampleInputEmail1 " aria-describedby="emailHelp ">
+                                        </div><br>
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1 ">EPF Work Location Office</label>
+                                            <input type="text " class="form-control " id="exampleInputEmail1 " aria-describedby="emailHelp ">
+                                        </div><br>
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1 ">EPF Contact No</label>
+                                            <input type="number " class="form-control " id="exampleInputEmail1 " aria-describedby="emailHelp ">
+                                        </div><br>
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1 ">TDS Circle </label>
+                                            <input type="text " class="form-control " id="exampleInputEmail1 " aria-describedby="emailHelp ">
+                                        </div><br>
+
+                                        <button type="submit " class="btn btn-primary ">Submit</button>
+                                    </form>
+                                    /Add Branch
+                                </div>
+                            </div>
+                             Custom Policy -->
+                <!-- <div class="custom-policy ">
+                                <div class="leave-header ">
+                                    <div class="title "></div>                                    
+                                </div>
+                                <div class="table-responsive ">
+                                    <table class="table table-hover table-nowrap leave-table mb-0 ">
+                                        <thead>
+                                            <tr>
+                                                <th class="l-name ">Name</th>
+                                                <th class="l-days ">Days</th>
+                                                <th class="l-assignee ">Assignee</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>5 Year Service </td>
+                                                <td>5</td>
+                                                <td>
+                                                    <a href="# " class="avatar "><img alt=" " src="assets/img/profiles/avatar-02.jpg "></a>
+                                                    <a href="# ">John Doe</a>
+                                                </td>
+                                                <td class="text-right ">
+                                                    <div class="dropdown dropdown-action ">
+                                                        <a aria-expanded="false " data-toggle="dropdown " class="action-icon dropdown-toggle " href="# "><i class="material-icons ">more_vert</i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right ">
+                                                            <a href="# " class="dropdown-item " data-toggle="modal " data-target="#edit_custom_policy "><i class="fa fa-pencil m-r-5 "></i> Edit</a>
+                                                            <a href="# " class="dropdown-item " data-toggle="modal " data-target="#delete_custom_policy "><i class="fa fa-trash-o m-r-5 "></i> Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> -->
+                <!-- /Custom Policy 
+
+                        </div>
+                        <div class="submit-section ">
+                            <button class="btn btn-primary submit-btn ">Submit</button>
+                            <button class="btn btn-primary submit-btn ">Reset</button>
+                        </div>
+                    </div>
+                     /Annual Leave
+                </div> -->
+            </div>
+
+        </div>
+        <!-- /Page Content -->
+
+        <!-- Add Custom Policy Modal -->
+        <div id="add_custom_policy " class="modal custom-modal fade " role="dialog ">
+            <div class="modal-dialog modal-dialog-centered modal-lg " role="document ">
+                <div class="modal-content ">
+                    <div class="modal-header ">
+                        <h5 class="modal-title ">Add Custom Policy</h5>
+                        <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+									<span aria-hidden="true ">&times;</span>
+								</button>
+                    </div>
+                    <div class="modal-body ">
+                        <form>
+                            <div class="form-group ">
+                                <label>Policy Name <span class="text-danger ">*</span></label>
+                                <input type="text " class="form-control ">
+                            </div>
+                            <div class="form-group ">
+                                <label>Days <span class="text-danger ">*</span></label>
+                                <input type="text " class="form-control ">
+                            </div>
+                            <div class="form-group leave-duallist ">
+                                <label>Add employee</label>
+                                <div class="row ">
+                                    <div class="col-lg-5 col-sm-5 ">
+                                        <select name="customleave_from " id="customleave_select " class="form-control " size="5 " multiple="multiple ">
+													<option value="1 ">Bernardo Galaviz </option>
+													<option value="2 ">Jeffrey Warden</option>
+													<option value="2 ">John Doe</option>
+													<option value="2 ">John Smith</option>
+													<option value="3 ">Mike Litorus</option>
+												</select>
+                                    </div>
+                                    <div class="multiselect-controls col-lg-2 col-sm-2 ">
+                                        <button type="button " id="customleave_select_rightAll " class="btn btn-block btn-white "><i class="fa fa-forward "></i></button>
+                                        <button type="button " id="customleave_select_rightSelected " class="btn btn-block btn-white "><i class="fa fa-chevron-right "></i></button>
+                                        <button type="button " id="customleave_select_leftSelected " class="btn btn-block btn-white "><i class="fa fa-chevron-left "></i></button>
+                                        <button type="button " id="customleave_select_leftAll " class="btn btn-block btn-white "><i class="fa fa-backward "></i></button>
+                                    </div>
+                                    <div class="col-lg-5 col-sm-5 ">
+                                        <select name="customleave_to " id="customleave_select_to " class="form-control " size="8 " multiple="multiple "></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="submit-section ">
+                                <button class="btn btn-primary submit-btn ">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Add Custom Policy Modal -->
+
+        <!-- Edit Custom Policy Modal -->
+        <div id="edit_custom_policy " class="modal custom-modal fade " role="dialog ">
+            <div class="modal-dialog modal-dialog-centered modal-lg " role="document ">
+                <div class="modal-content ">
+                    <div class="modal-header ">
+                        <h5 class="modal-title ">Edit Custom Policy</h5>
+                        <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+									<span aria-hidden="true ">&times;</span>
+								</button>
+                    </div>
+                    <div class="modal-body ">
+                        <form>
+                            <div class="form-group ">
+                                <label>Policy Name <span class="text-danger ">*</span></label>
+                                <input type="text " class="form-control " value="LOP ">
+                            </div>
+                            <div class="form-group ">
+                                <label>Days <span class="text-danger ">*</span></label>
+                                <input type="text " class="form-control " value="4 ">
+                            </div>
+                            <div class="form-group leave-duallist ">
+                                <label>Add employee</label>
+                                <div class="row ">
+                                    <div class="col-lg-5 col-sm-5 ">
+                                        <select name="edit_customleave_from " id="edit_customleave_select " class="form-control " size="5 " multiple="multiple ">
+													<option value="1 ">Bernardo Galaviz </option>
+													<option value="2 ">Jeffrey Warden</option>
+													<option value="2 ">John Doe</option>
+													<option value="2 ">John Smith</option>
+													<option value="3 ">Mike Litorus</option>
+												</select>
+                                    </div>
+                                    <div class="multiselect-controls col-lg-2 col-sm-2 ">
+                                        <button type="button " id="edit_customleave_select_rightAll " class="btn btn-block btn-white "><i class="fa fa-forward "></i></button>
+                                        <button type="button " id="edit_customleave_select_rightSelected " class="btn btn-block btn-white "><i class="fa fa-chevron-right "></i></button>
+                                        <button type="button " id="edit_customleave_select_leftSelected " class="btn btn-block btn-white "><i class="fa fa-chevron-left "></i></button>
+                                        <button type="button " id="edit_customleave_select_leftAll " class="btn btn-block btn-white "><i class="fa fa-backward "></i></button>
+                                    </div>
+                                    <div class="col-lg-5 col-sm-5 ">
+                                        <select name="customleave_to " id="edit_customleave_select_to " class="form-control " size="8 " multiple="multiple "></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="submit-section ">
+                                <button class="btn btn-primary submit-btn ">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Edit Custom Policy Modal -->
+
+        <!-- Delete Custom Policy Modal -->
+        <div class="modal custom-modal fade " id="delete_custom_policy " role="dialog ">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content ">
+                    <div class="modal-body ">
+                        <div class="form-header ">
+                            <h3>Delete Custom Policy</h3>
+                            <p>Are you sure want to delete?</p>
+                        </div>
+                        <div class="modal-btn delete-action ">
+                            <div class="row ">
+                                <div class="col-6 ">
+                                    <a href="javascript:void(0); " class="btn btn-primary continue-btn ">Delete</a>
+                                </div>
+                                <div class="col-6 ">
+                                    <a href="javascript:void(0); " data-dismiss="modal " class="btn btn-primary cancel-btn ">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Delete Custom Policy Modal -->
+
+    </div>
+    <!-- /Page Wrapper -->
+
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.2.1.min.js "></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/popper.min.js "></script>
+    <script src="assets/js/bootstrap.min.js "></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js "></script>
+
+    <!-- Select2 JS -->
+    <script src="assets/js/select2.min.js "></script>
+
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js "></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js "></script>
+
+    <!-- Multiselect JS -->
+    <script src="assets/js/multiselect.min.js "></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/app.js "></script>
+
+</body>
+
+</html>
