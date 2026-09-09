@@ -6,6 +6,9 @@ import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/tenant-db';
 import { verifyToken, getTokenFromHeaders } from '@/lib/auth';
 import { resolveCompanyScope } from '@/lib/companyScope';
+import { withRouteCache } from '@/lib/api-route-cache';
+
+const SUMMARY_CACHE_MS = 45_000;
 
 function cors() {
   return {
@@ -38,9 +41,12 @@ export async function GET(request: Request) {
     const scope = await resolveCompanyScope(request);
     if (!scope) return NextResponse.json({ error: 'Forbidden' }, { status: 403, headers: cors() });
 
+    const cacheKey = `dashboard-summary:${scope.userId}:${scope.companyId ?? ''}:${scope.scope}`;
+    const payload = await withRouteCache(cacheKey, SUMMARY_CACHE_MS, async () => {
     const db = await getDb(request);
-    const employeeFilter = scope.employeeId
-      ? { employeeId: scope.employeeId }
+    const empId = scope.ownEmployeeId;
+    const employeeFilter = empId
+      ? { employeeId: empId }
       : scope.companyId
         ? { employee: { companyId: scope.companyId } }
         : {};
@@ -77,7 +83,7 @@ export async function GET(request: Request) {
           where: {
             status: 'pending',
             ...(companyId ? { employee: { companyId } } : {}),
-            ...(scope.employeeId ? { employeeId: scope.employeeId } : {}),
+            ...(empId ? { employeeId: empId } : {}),
           },
         })
       ),
@@ -85,7 +91,7 @@ export async function GET(request: Request) {
         db.payroll.findMany({
           where: {
             ...(companyId ? { employee: { companyId } } : {}),
-            ...(scope.employeeId ? { employeeId: scope.employeeId } : {}),
+            ...(empId ? { employeeId: empId } : {}),
           },
           take: 5,
           orderBy: [{ year: 'desc' }, { month: 'desc' }],
@@ -95,7 +101,7 @@ export async function GET(request: Request) {
         db.performanceReview.findMany({
           where: {
             ...(companyId ? { employee: { companyId } } : {}),
-            ...(scope.employeeId ? { employeeId: scope.employeeId } : {}),
+            ...(empId ? { employeeId: empId } : {}),
           },
           take: 1,
           orderBy: { reviewDate: 'desc' },
@@ -105,7 +111,7 @@ export async function GET(request: Request) {
         db.goal.findMany({
           where: {
             ...(companyId ? { employee: { companyId } } : {}),
-            ...(scope.employeeId ? { employeeId: scope.employeeId } : {}),
+            ...(empId ? { employeeId: empId } : {}),
           },
           take: 5,
           orderBy: { updatedAt: 'desc' },
@@ -121,7 +127,7 @@ export async function GET(request: Request) {
         db.timesheet.findMany({
           where: {
             ...(companyId ? { employee: { companyId } } : {}),
-            ...(scope.employeeId ? { employeeId: scope.employeeId } : {}),
+            ...(empId ? { employeeId: empId } : {}),
           },
           take: 5,
           orderBy: { date: 'desc' },
@@ -131,7 +137,7 @@ export async function GET(request: Request) {
         db.ticket.findMany({
           where: {
             ...(companyId ? { companyId } : {}),
-            ...(scope.employeeId ? { employeeId: scope.employeeId } : {}),
+            ...(empId ? { employeeId: empId } : {}),
           },
           take: 5,
           orderBy: { createdAt: 'desc' },
@@ -141,7 +147,7 @@ export async function GET(request: Request) {
         db.document.findMany({
           where: {
             ...(companyId ? { companyId } : {}),
-            ...(scope.employeeId ? { employeeId: scope.employeeId } : {}),
+            ...(empId ? { employeeId: empId } : {}),
           },
           take: 5,
           orderBy: { uploadedAt: 'desc' },
@@ -149,8 +155,7 @@ export async function GET(request: Request) {
       ),
     ]);
 
-    return NextResponse.json(
-      {
+    return {
         leaveBalance: { balances: balances ?? [] },
         attendance: { attendance: attendance ?? [] },
         leavePending: { pagination: { total: pendingLeaveCount ?? 0 } },
@@ -161,9 +166,10 @@ export async function GET(request: Request) {
         timesheets: { timesheets: timesheets ?? [] },
         tickets: { tickets: tickets ?? [] },
         documents: { documents: documents ?? [] },
-      },
-      { headers: cors() }
-    );
+      };
+    });
+
+    return NextResponse.json(payload, { headers: cors() });
   } catch (error) {
     console.error('[dashboard/summary] error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500, headers: cors() });

@@ -138,11 +138,17 @@ export default function EmployeeDashboardPage() {
       if (statsRes.ok) {
         const statsData = await statsRes.json();
         const total = statsData.pagination?.total || 0;
+        const aggregateStats = statsData.aggregateStats as {
+          activeEmployees?: number;
+          onLeaveEmployees?: number;
+          inactiveEmployees?: number;
+        } | undefined;
 
-        // Fetch all employees for detailed stats (use pagination total for count)
-        const allRes = await fetch(`/api/employees?limit=500&page=1${scopeQuery}`, { headers });
-        const allData = await allRes.ok ? await allRes.json() : { employees: [] };
-        const allEmps = allData.employees || [];
+        // Only load full employee rows when the tenant is small enough for charts
+        const detailLimit = total > 0 && total <= 150 ? total : 0;
+        const allEmps = detailLimit > 0
+          ? ((await (await fetch(`/api/employees?limit=${detailLimit}&page=1${scopeQuery}`, { headers })).json()).employees || [])
+          : [];
 
         // Department distribution
         const deptMap = new Map<string, number>();
@@ -181,9 +187,15 @@ export default function EmployeeDashboardPage() {
           }
         });
 
-        const activeCount = allEmps.filter((e: any) => e.status === 'active').length;
-        const leaveCount = allEmps.filter((e: any) => e.status === 'on_leave').length;
-        const inactiveCount = allEmps.filter((e: any) => e.status !== 'active' && e.status !== 'on_leave').length;
+        const activeCount = allEmps.length > 0
+          ? allEmps.filter((e: any) => e.status === 'active').length
+          : (aggregateStats?.activeEmployees ?? total);
+        const leaveCount = allEmps.length > 0
+          ? allEmps.filter((e: any) => e.status === 'on_leave').length
+          : (aggregateStats?.onLeaveEmployees ?? 0);
+        const inactiveCount = allEmps.length > 0
+          ? allEmps.filter((e: any) => e.status !== 'active' && e.status !== 'on_leave').length
+          : (aggregateStats?.inactiveEmployees ?? 0);
 
         // ─── Compute lifecycle counts from employee data ───
         const PROBATION_PERIOD_DAYS = 90; // standard probation period

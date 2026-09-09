@@ -23,6 +23,9 @@ import { verifyToken, getTokenFromHeaders } from '@/lib/auth';
 import { getDataScope } from '@/lib/roleAccess';
 import { resolveManagerScope } from '@/lib/managerScope';
 
+const scopeCache = new Map<string, { result: CompanyScopeResult; at: number }>();
+const SCOPE_CACHE_MS = 60_000;
+
 export interface CompanyScopeResult {
   /** The authenticated user's ID */
   userId: string;
@@ -77,6 +80,13 @@ export async function resolveCompanyScope(request: Request): Promise<CompanyScop
     const scope = getDataScope(role);
     const tenantId = (decoded.tenantId as string) || null;
 
+    const { searchParams } = new URL(request.url);
+    const scopeCacheKey = `${userId}:${role}:${searchParams.get('companyId') || ''}:${searchParams.get('tenantId') || tenantId || ''}`;
+    const scopeHit = scopeCache.get(scopeCacheKey);
+    if (scopeHit && Date.now() - scopeHit.at < SCOPE_CACHE_MS) {
+      return scopeHit.result;
+    }
+
     // Use tenant-scoped DB (not platform DB) so employee records are found correctly
     const db = await getDb(request);
 
@@ -122,19 +132,19 @@ export async function resolveCompanyScope(request: Request): Promise<CompanyScop
     let companyId: string | null = null;
 
     if (scope === 'all') {
-      // Admin users: use the companyId from the CompanySwitcher if provided
-      const { searchParams } = new URL(request.url);
       const queryCompanyId = searchParams.get('companyId');
       if (queryCompanyId) {
         companyId = queryCompanyId;
       }
-      // If no companyId provided, admin sees all (companyId stays null)
     } else {
-      // Non-admin users (employee, manager): always filter by their own company
       companyId = ownCompanyId;
     }
 
-    return { userId, role, scope, companyId, ownCompanyId, tenantId, ownEmployeeId, visibleEmployeeIds };
+    const result: CompanyScopeResult = {
+      userId, role, scope, companyId, ownCompanyId, tenantId, ownEmployeeId, visibleEmployeeIds,
+    };
+    scopeCache.set(scopeCacheKey, { result, at: Date.now() });
+    return result;
   } catch (error) {
     console.error('[companyScope] Error resolving company scope:', error);
     return null;

@@ -148,7 +148,7 @@ function getAuthHeaders() {
 
 /** Dedupe concurrent hydrate() calls from layout, switcher, and pages. */
 let hydrateInflight: Promise<void> | null = null;
-const HYDRATE_STALE_MS = 2 * 60 * 1000; // skip repeat fetches within 2 minutes
+const HYDRATE_STALE_MS = 5 * 60 * 1000; // skip repeat fetches within 5 minutes
 
 export const useCompanyContextStore = create<CompanyContextState>()(
   persist(

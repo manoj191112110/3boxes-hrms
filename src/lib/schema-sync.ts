@@ -1231,9 +1231,10 @@ const FK_STATEMENTS: string[] = [
 ];
 
 export async function ensureSchemaSynced(): Promise<void> {
-  // Dev: skip 272-statement runtime sync — it blocks every API for 30–70s.
-  // Use `npm run db:push` locally. Set FORCE_RUNTIME_SYNC=1 to override.
-  if (process.env.NODE_ENV === 'development' && process.env.FORCE_RUNTIME_SYNC !== '1') {
+  // Schema is applied at build time (vercel.json → scripts/schema-sync.js).
+  // Runtime sync on API requests adds 2–30s latency in production. Skip unless
+  // explicitly forced (e.g. emergency migration). Use `npm run db:push` locally.
+  if (process.env.FORCE_RUNTIME_SYNC !== '1') {
     return;
   }
 

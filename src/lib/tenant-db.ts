@@ -57,6 +57,13 @@ const tenantDbCache = new Map<string, { client: PrismaClient; lastAccess: number
 const tenantSlugByIdCache = new Map<string, { slug: string; at: number }>()
 const TENANT_SLUG_CACHE_MS = 300_000
 
+// Cache dedicated-DB lookup so cold requests don't query platform DB every time
+type TenantDbMeta =
+  | { kind: 'dedicated'; connectionString: string; databaseName: string }
+  | { kind: 'platform' }
+const tenantDbMetaCache = new Map<string, { meta: TenantDbMeta; at: number }>()
+const TENANT_DB_META_CACHE_MS = 300_000
+
 async function getTenantSlugById(tenantId: string): Promise<string | null> {
   const cached = tenantSlugByIdCache.get(tenantId)
   if (cached && Date.now() - cached.at < TENANT_SLUG_CACHE_MS) return cached.slug
@@ -212,37 +219,36 @@ export async function getDbForTenant(tenantSlug: string): Promise<PrismaClient> 
     return cached.client
   }
 
-  // Look up the tenant's dedicated database
+  // Look up the tenant's dedicated database (cached metadata)
   try {
-    const tenantDbRecord = await platformDb.tenantDatabase.findFirst({
-      where: {
-        tenant: { slug: tenantSlug },
-        isActive: true,
-      },
-      select: {
-        connectionString: true,
-        databaseName: true,
-      },
-    })
+    let meta: TenantDbMeta | null = null
+    const metaCached = tenantDbMetaCache.get(tenantSlug)
+    if (metaCached && Date.now() - metaCached.at < TENANT_DB_META_CACHE_MS) {
+      meta = metaCached.meta
+    } else {
+      const tenantDbRecord = await platformDb.tenantDatabase.findFirst({
+        where: {
+          tenant: { slug: tenantSlug },
+          isActive: true,
+        },
+        select: {
+          connectionString: true,
+          databaseName: true,
+        },
+      })
+      meta = tenantDbRecord
+        ? { kind: 'dedicated', connectionString: tenantDbRecord.connectionString, databaseName: tenantDbRecord.databaseName }
+        : { kind: 'platform' }
+      tenantDbMetaCache.set(tenantSlug, { meta, at: Date.now() })
+    }
 
-    if (!tenantDbRecord) {
-      // No dedicated DB — use platform DB (shared mode)
-      // The calling code should filter by tenantId
-      console.log(`[TenantDB] No dedicated DB for "${tenantSlug}" — using platform DB with tenantId filtering`)
+    if (meta.kind === 'platform') {
       return platformDb
     }
 
-    // Create a new PrismaClient for this tenant's database
-    console.log(`[TenantDB] Routing to dedicated DB "${tenantDbRecord.databaseName}" for tenant "${tenantSlug}"`)
-    const adapter = new PrismaNeon({ connectionString: tenantDbRecord.connectionString })
+    const adapter = new PrismaNeon({ connectionString: meta.connectionString })
     const tenantClient = new PrismaClient({ adapter })
-
-    // Cache it
-    tenantDbCache.set(tenantSlug, {
-      client: tenantClient,
-      lastAccess: Date.now(),
-    })
-
+    tenantDbCache.set(tenantSlug, { client: tenantClient, lastAccess: Date.now() })
     return tenantClient
   } catch (error) {
     console.error(`[TenantDB] Failed to get DB for tenant "${tenantSlug}":`, error)

@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { getPlatformDb } from '@/lib/tenant-db';
 import { verifyToken, getTokenFromHeaders } from '@/lib/auth';
+import { withRouteCache } from '@/lib/api-route-cache';
+
+const MODULES_CACHE_MS = 120_000;
 
 function corsHeaders() {
   return {
@@ -38,19 +41,20 @@ export async function GET(request: Request) {
     // Any authenticated user can read module flags for their own tenant
     // (they can only see which modules are enabled, not toggle them)
 
-    const flags = await getPlatformDb().featureFlag.findMany({
-      where: { tenantId, key: { startsWith: 'module_' } },
-      select: { key: true, enabled: true },
-      orderBy: [{ key: 'asc' }],
+    const payload = await withRouteCache(`tenant-modules:${tenantId}`, MODULES_CACHE_MS, async () => {
+      const flags = await getPlatformDb().featureFlag.findMany({
+        where: { tenantId, key: { startsWith: 'module_' } },
+        select: { key: true, enabled: true },
+        orderBy: [{ key: 'asc' }],
+      });
+      const modules = flags.map((f) => ({
+        key: f.key.startsWith('module_') ? f.key.slice(7) : f.key,
+        enabled: f.enabled,
+      }));
+      return { modules };
     });
 
-    // Map to simple module key → enabled
-    const modules = flags.map((f) => ({
-      key: f.key.startsWith('module_') ? f.key.slice(7) : f.key,
-      enabled: f.enabled,
-    }));
-
-    return NextResponse.json({ modules }, { headers: corsHeaders() });
+    return NextResponse.json(payload, { headers: corsHeaders() });
   } catch (error) {
     console.error('[tenant-modules/public] GET error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500, headers: corsHeaders() });

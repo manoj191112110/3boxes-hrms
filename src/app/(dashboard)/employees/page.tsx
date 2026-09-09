@@ -580,34 +580,23 @@ export function EmployeesPageContent({ formOnly = false }: { formOnly?: boolean 
       if (companyId) sqParams.set('companyId', companyId);
       const companyParam = sqParams.toString() ? `&${sqParams.toString()}` : '';
 
-      // Fetch departments, designations, and branches from their own APIs
-      const [deptRes, desigRes, branchRes] = await Promise.allSettled([
-        fetch(`/api/departments?limit=100${companyParam}`, { headers }),
-        fetch(`/api/designations?limit=100${companyParam}`, { headers }),
-        fetch(`/api/branches?limit=100${companyParam}`, { headers }),
-      ]);
-      if (deptRes.status === 'fulfilled' && deptRes.value.ok) {
-        const d = await deptRes.value.json();
-        setDepartments(d.data || []);
-      }
-      if (desigRes.status === 'fulfilled' && desigRes.value.ok) {
-        const d = await desigRes.value.json();
-        setDesignations(d.data || []);
-      }
-      if (branchRes.status === 'fulfilled' && branchRes.value.ok) {
-        const d = await branchRes.value.json();
-        setBranches(d.data || []);
+      const masterQs = sqParams.toString();
+      const masterUrl = masterQs ? `/api/master-data?${masterQs}` : '/api/master-data';
+      const masterRes = await fetch(masterUrl, { headers });
+      if (masterRes.ok) {
+        const m = await masterRes.json();
+        setDepartments(m.departments || []);
+        setDesignations(m.designations || []);
+        setBranches(m.branches || []);
+        const policies = m.policies || [];
+        setLeavePolicies(policies.filter((p: { category: string }) => p.category === 'leave'));
+        setAttendancePolicies(policies.filter((p: { category: string }) => p.category === 'attendance'));
+        setTravelPolicies(policies.filter((p: { category: string }) => p.category === 'travel'));
       }
 
-      const [lpRes, apRes, tpRes, ssRes] = await Promise.allSettled([
-        fetch('/api/policies?category=leave', { headers }),
-        fetch('/api/policies?category=attendance', { headers }),
-        fetch('/api/policies?category=travel', { headers }),
+      const [ssRes] = await Promise.allSettled([
         fetch('/api/salary-structures', { headers }),
       ]);
-      if (lpRes.status === 'fulfilled' && lpRes.value.ok) { const d = await lpRes.value.json(); setLeavePolicies(d.policies || d.data || []); }
-      if (apRes.status === 'fulfilled' && apRes.value.ok) { const d = await apRes.value.json(); setAttendancePolicies(d.policies || d.data || []); }
-      if (tpRes.status === 'fulfilled' && tpRes.value.ok) { const d = await tpRes.value.json(); setTravelPolicies(d.policies || d.data || []); }
       if (ssRes.status === 'fulfilled' && ssRes.value.ok) { const d = await ssRes.value.json(); setSalaryStructures(d.salaryStructures || d.data || []); }
     } catch (err) {
       console.error('Failed to fetch dropdown data', err);

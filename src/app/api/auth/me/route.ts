@@ -3,6 +3,9 @@ import { getDb, getPlatformDb, getDbForTenant, getDbForTenantById } from '@/lib/
 import { verifyToken, getTokenFromHeaders } from '@/lib/auth';
 import { isLiveMode, isDemoMode } from '@/lib/site-mode';
 import { getServerHiddenSlugs, LIVE_HIDDEN_SLUGS, DEMO_HIDDEN_SLUGS } from '@/lib/tenant-filter';
+import { withRouteCache } from '@/lib/api-route-cache';
+
+const AUTH_ME_CACHE_MS = 60_000;
 
 // ─── Hidden Tenant Slugs (GOLDEN RULE — FOOLPROOF) ──────────────────
 // Uses tenant-filter.ts as PRIMARY (direct hostname check), then
@@ -47,6 +50,30 @@ export async function GET(request: Request) {
     const tenantId = decoded.tenantId as string | undefined;
     const tenantSlug = request.headers.get('x-tenant-slug') || '';
 
+    const cached = await withRouteCache(
+      `auth-me:${userId}:${tenantSlug}`,
+      AUTH_ME_CACHE_MS,
+      async () => loadAuthMeUser(request, userId, tenantId, tenantSlug),
+    );
+    if (!cached) {
+      return NextResponse.json({ error: 'User not found' }, { status: 404, headers: corsHeaders() });
+    }
+    return NextResponse.json(cached, { headers: corsHeaders() });
+  } catch (error) {
+    console.error('Get current user error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
+      { status: 500, headers: corsHeaders() }
+    );
+  }
+}
+
+async function loadAuthMeUser(
+  request: Request,
+  userId: string,
+  tenantId: string | undefined,
+  tenantSlug: string,
+) {
     // ─── Two-phase user lookup (same pattern as /api/auth/login) ───
     // Phase 1: Search the platform DB (neondb) for the user.
     // Phase 2: If not found, search the tenant-specific DB.
@@ -142,10 +169,7 @@ export async function GET(request: Request) {
     }
 
     if (!user) {
-      return NextResponse.json(
-        { error: 'User not found' },
-        { status: 404, headers: corsHeaders() }
-      );
+      return null;
     }
 
     if (!user.tenant && user.tenantId) {
@@ -256,27 +280,17 @@ export async function GET(request: Request) {
       status: user.tenant.status,
     } : null);
 
-    return NextResponse.json(
-      {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-        avatar: user.avatar,
-        status: user.status,
-        tenantId: safeTenantId,
-        tenant: safeTenant,
-        employee: employeeData,
-        lastLogin: user.lastLogin,
-        createdAt: user.createdAt,
-      },
-      { headers: corsHeaders() }
-    );
-  } catch (error) {
-    console.error('Get current user error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
-      { status: 500, headers: corsHeaders() }
-    );
-  }
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      avatar: user.avatar,
+      status: user.status,
+      tenantId: safeTenantId,
+      tenant: safeTenant,
+      employee: employeeData,
+      lastLogin: user.lastLogin,
+      createdAt: user.createdAt,
+    };
 }
