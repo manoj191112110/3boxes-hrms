@@ -83,19 +83,23 @@ npx prisma generate >/dev/null
 echo "==> Pushing Prisma schema to database"
 npx prisma db push
 
-echo "==> Seeding baseline data"
-# NEON_LOCAL_PROXY must be set before the shim preload runs (before dotenv).
-export NEON_LOCAL_PROXY=1 NEON_WS_PROXY_PORT=5433
-export DATABASE_URL="$CONN" POSTGRES_URL="$CONN" POSTGRES_PRISMA_URL="$CONN"
-# Start the ws proxy temporarily so seeding (which uses the Neon adapter) can connect.
-node scripts/local-dev/neon-ws-proxy.cjs >/tmp/neon-ws-proxy-install.log 2>&1 &
-PROXY_PID=$!
-sleep 1
-# seed.ts is idempotent (skips bootstrap when the demo tenant already exists).
-# The upstream seed has a known schema-drift bug (LeaveType requires a company),
-# so we tolerate a non-zero exit after the core tenant/users are created.
-NODE_OPTIONS="--require $REPO_ROOT/scripts/local-dev/neon-local-shim.cjs" \
-  npx tsx prisma/seed.ts || echo "   NOTE: seed completed partially (known upstream seed bug); core users are present"
-kill "$PROXY_PID" 2>/dev/null || true
+echo "==> Seeding baseline data (only if the database is empty)"
+TENANT_COUNT="$(sudo -u postgres psql -d "$DB_NAME" -tAc 'SELECT count(*) FROM "Tenant"' 2>/dev/null | tr -d '[:space:]' || echo 0)"
+if [ "${TENANT_COUNT:-0}" = "0" ]; then
+  # NEON_LOCAL_PROXY must be set before the shim preload runs (before dotenv).
+  export NEON_LOCAL_PROXY=1 NEON_WS_PROXY_PORT=5433
+  export DATABASE_URL="$CONN" POSTGRES_URL="$CONN" POSTGRES_PRISMA_URL="$CONN"
+  # Start the ws proxy temporarily so seeding (which uses the Neon adapter) can connect.
+  node scripts/local-dev/neon-ws-proxy.cjs >/tmp/neon-ws-proxy-install.log 2>&1 &
+  PROXY_PID=$!
+  sleep 1
+  # The upstream seed has a known schema-drift bug (LeaveType requires a company),
+  # so we tolerate a non-zero exit after the core tenant/users are created.
+  NODE_OPTIONS="--require $REPO_ROOT/scripts/local-dev/neon-local-shim.cjs" \
+    npx tsx prisma/seed.ts || echo "   NOTE: seed completed partially (known upstream seed bug); core users are present"
+  kill "$PROXY_PID" 2>/dev/null || true
+else
+  echo "   database already has ${TENANT_COUNT} tenant(s) — skipping seed"
+fi
 
 echo "==> Install complete"
