@@ -13,19 +13,34 @@ cd "$REPO_ROOT"
 
 export PATH="$HOME/.bun/bin:$PATH"
 
-PG_VER=16
 PG_CLUSTER=main
 DB_NAME=hrms
 DB_USER=hrms
 DB_PASS=hrms
 CONN="postgresql://${DB_USER}:${DB_PASS}@127.0.0.1:5432/${DB_NAME}?sslmode=disable"
 
-echo "==> Installing Node dependencies (bun install)"
-if command -v bun >/dev/null 2>&1; then
-  bun install
-else
-  npm install
+echo "==> Ensuring bun is installed"
+if ! command -v bun >/dev/null 2>&1; then
+  curl -fsSL https://bun.sh/install | bash
+  export PATH="$HOME/.bun/bin:$PATH"
 fi
+
+echo "==> Ensuring PostgreSQL is installed"
+if ! command -v pg_ctlcluster >/dev/null 2>&1; then
+  sudo apt-get update -y
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql postgresql-contrib
+fi
+
+# Detect the installed PostgreSQL major version (e.g. 16).
+PG_VER="$(ls /etc/postgresql 2>/dev/null | sort -V | tail -1)"
+if [ -z "$PG_VER" ]; then
+  echo "ERROR: PostgreSQL does not appear to be installed" >&2
+  exit 1
+fi
+echo "   using PostgreSQL ${PG_VER}"
+
+echo "==> Installing Node dependencies (bun install)"
+bun install
 
 echo "==> Ensuring PostgreSQL cluster is running"
 sudo pg_ctlcluster "$PG_VER" "$PG_CLUSTER" start 2>/dev/null || true
