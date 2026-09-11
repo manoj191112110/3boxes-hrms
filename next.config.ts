@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Local dev only (Cloud Agent): keep the Neon serverless driver external so the
+  // scripts/local-dev/neon-local-shim preload can point it at the local ws proxy.
+  // Guarded by NEON_LOCAL_PROXY so production bundling is unchanged.
+  ...(process.env.NEON_LOCAL_PROXY === '1'
+    ? { serverExternalPackages: ['@neondatabase/serverless', '@prisma/adapter-neon'] }
+    : {}),
   // Include schema SQL assets for /api/trial/approve tenant DB provisioning on Vercel
   outputFileTracingIncludes: {
     '/api/trial/approve': [
