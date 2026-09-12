@@ -1,0 +1,15 @@
+{
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "buildCommand": "npx prisma generate && (command -v python3 >/dev/null 2>&1 && python3 scripts/gen-missing-tables.py || echo '[build] Skipping gen-missing-tables.py (python3 not available or failed)') && node scripts/schema-sync.js && npx next build",
+  "crons": [
+    {
+      "path": "/api/cron/probation-alerts?secret=3boxes-hrms-cron-2026",
+      "schedule": "30 1 * * *"
+    },
+    {
+      "path": "/api/cron/onboarding-reminders?secret=3boxes-hrms-cron-2026",
+      "schedule": "0 2 * * *"
+    }
+  ]
+}

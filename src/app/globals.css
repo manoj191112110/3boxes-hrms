@@ -1,0 +1,468 @@
+@import "tailwindcss";
+
+:root {
+  /* 3Boxes HRMS Brand Colors */
+  --thb-primary: #10B981;
+  --thb-primary-dark: #059669;
+  --thb-primary-light: #34D399;
+  --thb-accent: #22C55E;
+  --thb-accent-light: #4ADE80;
+  --thb-background: #F8FAFC;
+  --thb-sidebar-bg: #0F172A;
+  --thb-sidebar-text: #94A3B8;
+  --thb-sidebar-active: #10B981;
+  --thb-sidebar-hover: #1E293B;
+  --thb-card-bg: #FFFFFF;
+  --thb-border: #E2E8F0;
+  --thb-text-primary: #0F172A;
+  --thb-text-secondary: #64748B;
+  --thb-text-muted: #94A3B8;
+  --thb-success: #10B981;
+  --thb-warning: #F59E0B;
+  --thb-error: #EF4444;
+  --thb-info: #10B981;
+
+  /* Default background/foreground */
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-thb-primary: var(--thb-primary);
+  --color-thb-primary-dark: var(--thb-primary-dark);
+  --color-thb-primary-light: var(--thb-primary-light);
+  --color-thb-accent: var(--thb-accent);
+  --color-thb-accent-light: var(--thb-accent-light);
+  --color-thb-sidebar-bg: var(--thb-sidebar-bg);
+  --color-thb-sidebar-text: var(--thb-sidebar-text);
+  --color-thb-sidebar-active: var(--thb-sidebar-active);
+  --color-thb-sidebar-hover: var(--thb-sidebar-hover);
+  --color-thb-card-bg: var(--thb-card-bg);
+  --color-thb-border: var(--thb-border);
+  --color-thb-text-primary: var(--thb-text-primary);
+  --color-thb-text-secondary: var(--thb-text-secondary);
+  --color-thb-text-muted: var(--thb-text-muted);
+  --color-thb-success: var(--thb-success);
+  --color-thb-warning: var(--thb-warning);
+  --color-thb-error: var(--thb-error);
+  --color-thb-info: var(--thb-info);
+}
+
+/* Scrollbar Styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #CBD5E1;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #94A3B8;
+}
+
+/* Sidebar scrollbar */
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: #334155;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #475569;
+}
+
+/* Animation Keyframes */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Utility Classes */
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.animate-slide-out-right {
+  animation: slideOutRight 0.3s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.3s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Card Utilities */
+.thb-card {
+  background: var(--thb-card-bg);
+  border: 1px solid var(--thb-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+/* 3Boxes HRMS Form & Button Utilities
+   Note: Class names starting with a digit must be escaped in CSS using \33 
+   e.g. .3boxes-input → .\33 boxes-input
+*/
+.\33 boxes-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--thb-border);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--thb-text-primary);
+  background: white;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.\33 boxes-input::placeholder { color: var(--thb-text-muted); }
+.\33 boxes-input:focus {
+  border-color: var(--thb-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+.\33 boxes-input:read-only {
+  background: #F8FAFC;
+  cursor: default;
+}
+
+.\33 boxes-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: white;
+  background: var(--thb-primary);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.\33 boxes-btn-primary:hover {
+  background: var(--thb-primary-dark);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.\33 boxes-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.\33 boxes-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--thb-text-secondary);
+  background: white;
+  border: 1px solid var(--thb-border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.\33 boxes-btn-secondary:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+}
+
+/* Public-facing form input (used by /careers and other public pages) */
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgb(226 232 240); /* slate-200 */
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(15 23 42); /* slate-900 */
+  background: white;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.form-input::placeholder { color: rgb(148 163 184); /* slate-400 */ }
+.form-input:focus {
+  border-color: rgb(99 102 241); /* indigo-500 */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+.thb-card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.thb-card-hover:hover {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Badge Utilities */
+.thb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.thb-badge-primary {
+  background: #EFF6FF;
+  color: #1D4ED8;
+}
+
+.thb-badge-success {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.thb-badge-warning {
+  background: #FFFBEB;
+  color: #D97706;
+}
+
+.thb-badge-error {
+  background: #FEF2F2;
+  color: #DC2626;
+}
+
+.thb-badge-info {
+  background: #EFF6FF;
+  color: #2563EB;
+}
+
+.thb-badge-purple {
+  background: #F5F3FF;
+  color: #7C3AED;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--thb-primary) 0%, var(--thb-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body {
+  background: var(--thb-background);
+  color: var(--thb-text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--thb-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth transitions for interactive elements */
+button, a, input, select, textarea {
+  transition: all 0.15s ease;
+}
+
+/* Mobile Safe Area */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Welcome Greeting Card Animations */
+@keyframes confettiFall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+@keyframes confettiSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes envelopePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes onboardingFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Mobile touch-friendly improvements */
+@media (max-width: 767px) {
+  /* Reduce card shadows on mobile for cleaner look */
+  .thb-card {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+  }
+
+  /* Smaller padding in mobile content */
+  .thb-card-hover:hover {
+    transform: none;
+  }
+
+  /* Make tables horizontally scrollable */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better tap targets */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent text selection on UI elements */
+  button, nav, header {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* ─── Required field indicator (red asterisk) ─────────────────────────── */
+/* Any <label> with data-required="true" will show a red asterisk after the text */
+label[data-required="true"]::after,
+.required-asterisk::after {
+  content: " *";
+  color: #ef4444; /* red-500 */
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+/* Input fields with the `required` attribute get a subtle red border indicator */
+input[required]:not(:placeholder-shown):invalid,
+select[required]:invalid,
+textarea[required]:not(:placeholder-shown):invalid {
+  border-color: #ef4444; /* red-500 */
+}

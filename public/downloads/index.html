@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download 3Boxes HRMS Mobile App</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #6366f1, #8b5cf6); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .card { background: white; border-radius: 20px; padding: 40px; max-width: 480px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.2); text-align: center; }
+    .logo { width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; }
+    h1 { font-size: 24px; color: #1e293b; margin-bottom: 8px; }
+    .subtitle { color: #64748b; font-size: 14px; margin-bottom: 30px; }
+    .badge { display: inline-block; background: #ecfdf5; color: #059669; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
+    .download-btn { display: block; width: 100%; padding: 16px; border-radius: 12px; border: none; font-size: 16px; font-weight: 600; cursor: pointer; text-decoration: none; margin-bottom: 12px; transition: all 0.2s; }
+    .android-btn { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+    .android-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16,185,129,0.3); }
+    .ios-btn { background: #f1f5f9; color: #64748b; cursor: default; }
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; text-align: left; }
+    .feature { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; background: #f8fafc; font-size: 12px; color: #475569; }
+    .feature-icon { font-size: 16px; }
+    .instructions { background: #f8fafc; border-radius: 12px; padding: 16px; margin-top: 20px; text-align: left; }
+    .instructions h3 { font-size: 13px; color: #334155; margin-bottom: 8px; }
+    .instructions ol { font-size: 12px; color: #64748b; padding-left: 20px; }
+    .instructions li { margin-bottom: 4px; }
+    .footer { margin-top: 20px; font-size: 11px; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">📱</div>
+    <h1>3Boxes HRMS</h1>
+    <p class="subtitle">Mobile App Download</p>
+    <span class="badge">v1.0.0 · Native App</span>
+    
+    <a href="/api/mobile-app/apk" class="download-btn android-btn" id="androidBtn">
+      ⬇ Download for Android
+    </a>
+    <div class="download-btn ios-btn">
+      🍎 iOS — Coming Soon
+    </div>
+    
+    <div class="features">
+      <div class="feature"><span class="feature-icon">⚡</span> Native Speed</div>
+      <div class="feature"><span class="feature-icon">🔒</span> Encrypted</div>
+      <div class="feature"><span class="feature-icon">📡</span> Offline Mode</div>
+      <div class="feature"><span class="feature-icon">🔄</span> Auto Updates</div>
+    </div>
+    
+    <div class="instructions">
+      <h3>How to install (Android)</h3>
+      <ol>
+        <li>Tap "Download for Android" above</li>
+        <li>Open the downloaded APK file</li>
+        <li>Allow installation from unknown sources if prompted</li>
+        <li>Tap "Install" and open the app</li>
+        <li>Log in with your HRMS credentials</li>
+      </ol>
+    </div>
+    
+    <p class="footer">3Boxes HRMS · People · Process · Technology<br>A Proud Product of Marq AI Tech Pvt Ltd</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,3408 @@
+
+================================================================================
+SHEET: Employee Management
+================================================================================
+
+--- Section: LEFT (3boxeshrms.com) ---
+
+  Row 70 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Acrual Results
+
+  Row 79 | TestID: EMP-003 | Status: Fail
+    Module: Add Employee
+    Feature: Validation (Next Button)
+    Scenario: Verify Next button blocks navigation if mandatory fields are empty
+    Steps: Leave required fields blank
+    Test Data: Blank
+    Expected: Validation messages shown and user stays on current step
+    Actual: Navigates to next step, No block navigation is set
+
+  Row 81 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 87 | TestID: EMP-005 | Status: Fail
+    Module: Add Employee Personal Details
+    Feature: First Name
+    Scenario: Leave blank
+    Steps: Click Next
+    Test Data: Blank
+    Expected: "First Name is required."
+    Actual: Navigates to next step, No validation message is set
+
+  Row 93 | TestID: EMP-006 | Status: Fail
+    Module: Add Employee Personal Details
+    Feature: Last Name
+    Scenario: Leave Blank
+    Steps: Click Next
+    Test Data: Empty
+    Expected: "Last Name" is required.
+    Actual: Navigates to next step, No validation message is set
+
+  Row 133 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 148 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 165 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 180 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual
+
+  Row 202 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actaul Result
+
+  Row 203 | TestID: EMP-019 | Status: Fail
+    Module: Add Employee Emergency Tab
+    Feature: Contact Name
+    Scenario: Verify Entering numeric values & special characters
+    Steps: Enter 123, @#$%^
+    Test Data: 123, @#$%^
+    Expected: Input Restriction /Character Restriction/ Validation message (Enter valid input)
+    Actual: Accepting Special characters & numeric values, no validation message is set
+
+  Row 213 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 249 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 262 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 273 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual  Results
+
+  Row 301 | TestID: EL-015 | Status: Fail
+    Module: Employee List
+    Feature: Export
+    Scenario: Export filtered records
+    Steps: Filter InActive → Export
+    Test Data: InActive Employees
+    Expected: Only filtered records exported
+    Actual: Exported data Failed to give selected Inactive records 
+
+  Row 317 | TestID: EL-021 | Status: Fail
+    Module: Employee List
+    Feature: Sync
+    Scenario: Add Employee
+    Steps: Create employee
+    Test Data: Valid Employee
+    Expected: New employee appears in Employee List
+    Actual: Failed to create new employee records
+
+  Row 329 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 382 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 403 | TestID: PR-016 | Status: Pass/Fail
+    Module: Probation Review
+    Feature: Submit
+    Scenario: Submit completed review
+    Steps: Fill mandatory fields → Submit
+    Test Data: Valid Data
+    Expected: Review submitted successfully
+    Actual: No mandatory field is set,              Probation review submitted successfully
+
+  Row 410 | TestID: PR-021 | Status: Fail
+    Module: Probation Review
+    Feature: Review List
+    Scenario: Verify review appears after submission
+    Steps: Submit review
+    Test Data: Valid Data
+    Expected: New review displayed in list
+    Actual: Failed to display newly submitted review
+
+  Row 417 | TestID: PR-023 | Status: Pass/Fail
+    Module: Probation Review
+    Feature: Dashboard
+    Scenario: Verify dashboard updates
+    Steps: Confirm employee
+    Test Data: Valid Employee
+    Expected: Probation count decreases and active count updates if applicable
+    Actual: Probation count not updated,                 Active count updated
+
+  Row 428 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 430 | TestID: TR-002 | Status: Pass/Fail
+    Module: Transfer Employee
+    Feature: UI
+    Scenario: Verify all page components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee dropdown, Transfer Details, Approval section, Buttons, Recent Transfer List displayed
+    Actual: Recent Transfer List not displayed
+
+  Row 431 | TestID: TR-003 | Status: Fail
+    Module: Transfer Employee
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No Unsaved warning message displayed,                                                returned to Employee List screen
+
+  Row 456 | TestID: TR-016 | Status: Fail
+    Module: Transfer Employee
+    Feature: Request List
+    Scenario: Verify new request appears
+    Steps: Submit transfer request
+    Test Data: Valid Data
+    Expected: New request displayed in recent transfers
+    Actual: Failed to display new request details
+
+  Row 476 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 478 | TestID: RES-002 | Status: Pass/Fail
+    Module: Resignation
+    Feature: UI
+    Scenario: Verify all sections are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee Details, Resignation Details, Notice Period, Exit Process, Buttons, Request List displayed correctly
+    Actual: Request List is not displayed
+
+  Row 479 | TestID: RES-003 | Status: Fail
+    Module: Resignation
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No Unsaved warning message displayed,                                                returned to Employee List screen
+
+  Row 486 | TestID: RES-007 | Status: Fail
+    Module: Resignation
+    Feature: Date Validation
+    Scenario: Last working date before resignation date
+    Steps: Select invalid dates
+    Test Data: Invalid Dates
+    Expected: Validation displayed
+    Actual: Employee ID is required
+
+  Row 500 | TestID: RES-018 | Status: Fail
+    Module: Resignation
+    Feature: Submit
+    Scenario: Submit resignation with valid details
+    Steps: Complete mandatory fields → Submit
+    Test Data: Valid Data
+    Expected: Resignation request submitted successfully
+    Actual: Failed to submit resignation request / Employee ID is required
+
+  Row 503 | TestID: RES-021 | Status: Fail
+    Module: Resignation
+    Feature: Request List
+    Scenario: Verify request appears after submission
+    Steps: Submit resignation
+    Test Data: Valid Data
+    Expected: Request added to resignation list
+    Actual: ______
+
+  Row 511 | TestID: RES-023 | Status: Fail
+    Module: Resignation
+    Feature: Employee Dashboard
+    Scenario: Verify dashboard updates
+    Steps: Submit resignation
+    Test Data: Valid Employee
+    Expected: Resignation metrics updated
+    Actual: Resignation metrics count not updated in the dashboard
+
+  Row 524 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 526 | TestID: TER-002 | Status: Pass/Fail
+    Module: Termination
+    Feature: UI
+    Scenario: Verify all page components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee dropdown, Termination Details, Exit Clearance, Buttons, Termination Records List displayed correctly
+    Actual: Termination Records not displayed
+
+  Row 527 | TestID: TER-003 | Status: Fail
+    Module: Termination
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No Unsaved warning message displayed,                                                returned to Employee List screen
+
+  Row 534 | TestID: TER-008 | Status: Fail
+    Module: Termination
+    Feature: Date Validation
+    Scenario: Last working date before termination date
+    Steps: Select invalid dates
+    Test Data: Invalid Dates
+    Expected: Validation displayed
+    Actual: Accepted Invalid dates
+
+  Row 554 | TestID: TER-017 | Status: Fail
+    Module: Termination
+    Feature: Records List
+    Scenario: Verify new termination appears
+    Steps: Submit termination
+    Test Data: Valid Data
+    Expected: New record displayed in list
+    Actual: ______
+
+  Row 576 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 578 | TestID: REJ-002 | Status: Pass/Fail
+    Module: Rejoin Employee
+    Feature: UI
+    Scenario: Verify all page components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee dropdown, Rejoin Details, Continuity Options, Comments, Buttons, Rejoin Request List displayed correctly
+    Actual: Rejoin Request List not displayed
+
+  Row 579 | TestID: REJ-003 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No Unsaved warning message displayed,                                                returned to Employee List screen
+
+  Row 580 | TestID: REJ-004 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Employee Dropdown
+    Scenario: Verify past employee dropdown
+    Steps: Open dropdown
+    Test Data: Former Employees
+    Expected: Only resigned or terminated employees are displayed
+    Actual: Recently terminated employee results not displayed
+
+  Row 605 | TestID: REJ-017 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Submit
+    Scenario: Submit rejoin request
+    Steps: Complete mandatory fields → Submit
+    Test Data: Valid Data
+    Expected: Rejoin request submitted successfully
+    Actual: Failed to submit rejoin request, Employee ID is required
+
+  Row 607 | TestID: REJ-019 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Request List
+    Scenario: Verify request appears after submission
+    Steps: Submit request
+    Test Data: Valid Data
+    Expected: New request displayed in list
+    Actual: ______
+
+  Row 614 | TestID: REJ-020 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Employee Master
+    Scenario: Approve rejoin
+    Steps: Submit & approve
+    Test Data: Valid Employee
+    Expected: Employee profile reactivated or new employment record created
+    Actual: Employee ID is required
+
+  Row 615 | TestID: REJ-021 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Employee List
+    Scenario: Verify employee appears
+    Steps: Open Employee List
+    Test Data: Rejoined Employee
+    Expected: Employee listed as Active
+    Actual: ______
+
+  Row 616 | TestID: REJ-022 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Dashboard
+    Scenario: Verify dashboard updates
+    Steps: Approve rejoin
+    Test Data: Valid Employee
+    Expected: Active employee count and new joiner metrics updated
+    Actual: ______
+
+  Row 629 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 634 | TestID: ORG-004 | Status: Fail
+    Module: Organization Chart
+    Feature: Total Employees
+    Scenario: Verify employee count
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Total employee count matches Employee Master
+    Actual: Total employee count does not match with employee master
+
+  Row 635 | TestID: ORG-005 | Status: Fail
+    Module: Organization Chart
+    Feature: Departments
+    Scenario: Verify department count
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Total departments match Department Master
+    Actual: ______
+
+  Row 639 | TestID: ORG-009 | Status: Fail
+    Module: Organization Chart
+    Feature: Search
+    Scenario: Search employee by name
+    Steps: Enter employee name
+    Test Data: John Smith
+    Expected: Matching employee highlighted/displayed
+    Actual: Search function collapsed
+
+  Row 678 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 680 | TestID: EMPSET-002 | Status: Pass/Fail
+    Module: Employee Settings
+    Feature: UI
+    Scenario: Verify all page components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Export CSV button, Metric Cards, Breadcrumb Navigation, Search Bar, Filters, Employee Login Credentials List displayed correctly
+    Actual: Employee Login list not displayed
+
+  Row 685 | TestID: EMPSET-006 | Status: Fail
+    Module: Employee Settings
+    Feature: Total Employees
+    Scenario: Verify total employee count
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Count matches Employee Master
+    Actual: 0 count displayed 
+
+  Row 686 | TestID: EMPSET-007 | Status: Fail
+    Module: Employee Settings
+    Feature: With Account
+    Scenario: Verify employees with login accounts
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Count displayed correctly
+    Actual: ______
+
+  Row 687 | TestID: EMPSET-008 | Status: Fail
+    Module: Employee Settings
+    Feature: No Account
+    Scenario: Verify employees without login accounts
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Count displayed correctly
+    Actual: ______
+
+  Row 688 | TestID: EMPSET-009 | Status: Fail
+    Module: Employee Settings
+    Feature: Active Accounts
+    Scenario: Verify active account count
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Active account count displayed correctly
+    Actual: ______
+
+  Row 689 | TestID: EMPSET-010 | Status: Fail
+    Module: Employee Settings
+    Feature: Inactive Accounts
+    Scenario: Verify inactive account count
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Inactive account count displayed correctly
+    Actual: ______
+
+  Row 696 | TestID: EMPSET-017 | Status: Fail
+    Module: Employee Settings
+    Feature: Search
+    Scenario: Search employee by name
+    Steps: Enter employee name
+    Test Data: John Smith
+    Expected: Matching employee displayed
+    Actual: No employee records displayed
+
+  Row 700 | TestID: EMPSET-018 | Status: Fail
+    Module: Employee Settings
+    Feature: Department Filter
+    Scenario: Filter by department
+    Steps: Select Engineering
+    Test Data: Engineering
+    Expected: Only Engineering employees displayed
+    Actual: Failed to display results
+
+  Row 701 | TestID: EMPSET-019 | Status: Fail
+    Module: Employee Settings
+    Feature: Status Filter
+    Scenario: Filter by Active
+    Steps: Select Active
+    Test Data: Active
+    Expected: Only active accounts displayed
+    Actual: ______
+
+  Row 703 | TestID: EMPSET-020 | Status: Fail
+    Module: Employee Settings
+    Feature: Filter Reset
+    Scenario: Clear search and filters
+    Steps: Remove filters
+    Test Data: N/A
+    Expected: Complete employee list restored
+    Actual: Failed to display employee login records
+
+  Row 704 | TestID: EMPSET-021 | Status: Fail
+    Module: Employee Settings
+    Feature: Employee Name
+    Scenario: Verify employee name
+    Steps: Open list
+    Test Data: Existing Data
+    Expected: Correct employee name displayed
+    Actual: ______
+
+  Row 705 | TestID: EMPSET-022 | Status: Fail
+    Module: Employee Settings
+    Feature: Login Email
+    Scenario: Verify login email
+    Steps: Open list
+    Test Data: Existing Data
+    Expected: Correct login email displayed
+    Actual: ______
+
+  Row 706 | TestID: EMPSET-023 | Status: Fail
+    Module: Employee Settings
+    Feature: Department
+    Scenario: Verify department
+    Steps: Open list
+    Test Data: Existing Data
+    Expected: Correct department displayed
+    Actual: ______
+
+  Row 707 | TestID: EMPSET-024 | Status: Fail
+    Module: Employee Settings
+    Feature: Account Status
+    Scenario: Verify account status
+    Steps: Open list
+    Test Data: Existing Data
+    Expected: Active/Inactive status displayed correctly
+    Actual: ______
+
+  Row 708 | TestID: EMPSET-025 | Status: Fail
+    Module: Employee Settings
+    Feature: Last Login
+    Scenario: Verify last login date
+    Steps: Open list
+    Test Data: Existing Data
+    Expected: Correct last login timestamp displayed
+    Actual: ______
+
+  Row 709 | TestID: EMPSET-026 | Status: Fail
+    Module: Employee Settings
+    Feature: Actions
+    Scenario: Verify action menu
+    Steps: Click Actions
+    Test Data: Existing Data
+    Expected: Available actions displayed according to permissions
+    Actual: ______
+
+  Row 716 | TestID: EMPSET-027 | Status: Fail
+    Module: Employee Settings
+    Feature: Employee Master
+    Scenario: Add employee
+    Steps: Create employee
+    Test Data: Valid Employee
+    Expected: Employee appears in Employee Settings list
+    Actual: ______
+
+  Row 719 | TestID: EMPSET-028 | Status: Fail
+    Module: Employee Settings
+    Feature: Company Mapping
+    Scenario: Change employee company
+    Steps: Update mapping
+    Test Data: Existing Employee
+    Expected: Employee reflects new company assignment
+    Actual: ______
+
+  Row 720 | TestID: EMPSET-029 | Status: Fail
+    Module: Employee Settings
+    Feature: Dashboard
+    Scenario: Verify metric synchronization
+    Steps: Modify employee accounts
+    Test Data: Existing Data
+    Expected: Dashboard metrics updated correctly
+    Actual: ______
+
+  Row 721 | TestID: EMPSET-030 | Status: Fail
+    Module: Employee Settings
+    Feature: Login Audit
+    Scenario: User login
+    Steps: Login with employee account
+    Test Data: Valid Credentials
+    Expected: Last Login updated immediately after successful login
+    Actual: ______
+
+  Row 723 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actaul Result
+
+  Row 725 | TestID: INV-002 | Status: Pass/Fail
+    Module: Invite Employees
+    Feature: UI
+    Scenario: Verify all UI components are displayed
+    Steps: Open Invite page
+    Test Data: N/A
+    Expected: Invite All Employees card, Invite Selected card, Employee Selection List, Select All, Clear Selection displayed
+    Actual: Select Employees to invite list is not displayed
+
+  Row 727 | TestID: INV-004 | Status: Fail
+    Module: Invite Employees
+    Feature: Invite All
+    Scenario: Invite all employees without accounts
+    Steps: Click Invite All Employees
+    Test Data: Employees without accounts
+    Expected: Login accounts are created (if required) and invitation emails are sent successfully
+    Actual: Failed to invite all employees
+
+  Row 732 | TestID: INV-005 | Status: Fail
+    Module: Invite Employees
+    Feature: Invite Selected
+    Scenario: Invite one employee
+    Steps: Select one employee → Invite Selected
+    Test Data: One Employee
+    Expected: Invitation sent successfully
+    Actual: No list is displayed to select employees to invite
+
+  Row 736 | TestID: INV-006 | Status: Fail
+    Module: Invite Employees
+    Feature: Employee Selection
+    Scenario: Verify employee list loads
+    Steps: Open Invite page
+    Test Data: Existing Employees
+    Expected: Employees displayed correctly
+    Actual: Employees list not displayed
+
+  Row 741 | TestID: INV-007 | Status: Fail
+    Module: Invite Employees
+    Feature: Validation
+    Scenario: Invite Selected without selecting employees
+    Steps: Click Invite Selected
+    Test Data: No Selection
+    Expected: Validation message displayed
+    Actual: ______
+
+  Row 746 | TestID: INV-008 | Status: Fail
+    Module: Invite Employees
+    Feature: Email
+    Scenario: Verify invitation email content
+    Steps: Open received email
+    Test Data: Valid Email
+    Expected: Email contains employee name, login email, temporary password, login URL, and security instructions
+    Actual: ______
+
+  Row 750 | TestID: INV-009 | Status: Fail
+    Module: Invite Employees
+    Feature: Employee Settings
+    Scenario: Send invitation
+    Steps: Invite employee
+    Test Data: Existing Employee
+    Expected: Employee account status changes from "No Account" to "With Account" (if accounts are auto-created)
+    Actual: ______
+
+  Row 751 | TestID: INV-010 | Status: Fail
+    Module: Invite Employees
+    Feature: Login Credentials
+    Scenario: Verify credentials
+    Steps: Open Login Credentials tab
+    Test Data: Invited Employee
+    Expected: Login credentials displayed correctly
+    Actual: ______
+
+  Row 752 | TestID: INV-011 | Status: Fail
+    Module: Invite Employees
+    Feature: Employee Master
+    Scenario: Verify employee record
+    Steps: Open Employee Master
+    Test Data: Invited Employee
+    Expected: Employee profile linked with login account
+    Actual: ______
+
+  Row 753 | TestID: INV-012 | Status: Fail
+    Module: Invite Employees
+    Feature: Notifications
+    Scenario: Verify notification log
+    Steps: Send invitation
+    Test Data: Valid Employee
+    Expected: Invitation event recorded
+    Actual: ______
+
+  Row 754 | TestID: INV-013 | Status: Fail
+    Module: Invite Employees
+    Feature: Audit Log
+    Scenario: Verify audit trail
+    Steps: Send invitation
+    Test Data: Valid Employee
+    Expected: Audit log records invitation activity
+    Actual: ______
+
+  Row 755 | TestID: INV-014 | Status: Fail
+    Module: Invite Employees
+    Feature: Performance
+    Scenario: Verify invitation processing time
+    Steps: Invite multiple employees
+    Test Data: 100 Employees
+    Expected: Invitations processed within acceptable time
+    Actual: ______
+
+  Row 757 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 767 | TestID: BULK-005 | Status: Fail
+    Module: Bulk Operations
+    Feature: Generate Selected
+    Scenario: Generate password for one employee
+    Steps: Select employee → Generate Selected
+    Test Data: One Employee
+    Expected: Password generated only for selected employee
+    Actual: ______
+
+  Row 775 | TestID: BULK-007 | Status: Fail
+    Module: Bulk Operations
+    Feature: Password Validation
+    Scenario: Blank password
+    Steps: Leave password empty
+    Test Data: Blank
+    Expected: Validation displayed
+    Actual: Admin not found error
+
+  Row 782 | TestID: BULK-008 | Status: Fail
+    Module: Bulk Operations
+    Feature: Confirmation
+    Scenario: Confirm bulk password reset
+    Steps: Click Generate Password
+    Test Data: Existing Employees
+    Expected: Confirmation dialog displayed before execution
+    Actual: ______
+
+  Row 785 | TestID: BULK-009 | Status: Fail
+    Module: Bulk Operations
+    Feature: Processing
+    Scenario: Verify success message
+    Steps: Complete operation
+    Test Data: Existing Employees
+    Expected: Success notification displayed
+    Actual: ______
+
+  Row 786 | TestID: BULK-010 | Status: Fail
+    Module: Bulk Operations
+    Feature: Login Credentials
+    Scenario: Verify password update
+    Steps: Open Login Credentials
+    Test Data: Updated Employee
+    Expected: Password reset recorded
+    Actual: ______
+
+  Row 787 | TestID: BULK-011 | Status: Fail
+    Module: Bulk Operations
+    Feature: Employee Settings
+    Scenario: Verify account creation
+    Steps: Auto Generate All
+    Test Data: Employee without account
+    Expected: Account status changes to "With Account"
+    Actual: ______
+
+  Row 788 | TestID: BULK-012 | Status: Fail
+    Module: Bulk Operations
+    Feature: Authentication
+    Scenario: Login using new password
+    Steps: Login
+    Test Data: Updated Credentials
+    Expected: Login successful
+    Actual: ______
+
+  Row 789 | TestID: BULK-013 | Status: Fail
+    Module: Bulk Operations
+    Feature: Notifications
+    Scenario: Verify notification
+    Steps: Generate passwords
+    Test Data: Existing Employees
+    Expected: Password reset email sent (if configured)
+    Actual: ______
+
+  Row 790 | TestID: BULK-014 | Status: Fail
+    Module: Bulk Operations
+    Feature: Audit Logs
+    Scenario: Verify audit trail
+    Steps: Complete bulk operation
+    Test Data: Existing Employees
+    Expected: Bulk action recorded with user, time, and affected employee count
+    Actual: ______
+
+  Row 791 | TestID: BULK-015 | Status: Fail
+    Module: Bulk Operations
+    Feature: Performance
+    Scenario: Generate passwords for large dataset
+    Steps: Execute Auto Generate All
+    Test Data: 1,000+ Employees
+    Expected: Operation completes within acceptable time and displays progress
+    Actual: ______
+
+  Row 793 | TestID: Test_Id | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 795 | TestID: MAP-002 | Status: Fail
+    Module: Map Company
+    Feature: UI
+    Scenario: Verify all UI components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee selection block, search bar, mapping section (if applicable), action buttons displayed correctly
+    Actual: ______
+
+  Row 797 | TestID: MAP-004 | Status: Fail
+    Module: Map Company
+    Feature: Employee Search
+    Scenario: Search employee by name
+    Steps: Enter employee name
+    Test Data: John Smith
+    Expected: Matching employee displayed
+    Actual: ______
+
+  Row 802 | TestID: MAP-005 | Status: Fail
+    Module: Map Company
+    Feature: Company Mapping
+    Scenario: Map employee to another company
+    Steps: Select employee → Add company mapping → Save
+    Test Data: Existing Employee + Company
+    Expected: Employee successfully mapped to selected company
+    Actual: ______
+
+  Row 809 | TestID: MAP-006 | Status: Fail
+    Module: Map Company
+    Feature: Validation
+    Scenario: Save without employee selection
+    Steps: Click Save
+    Test Data: No Employee
+    Expected: Validation message displayed
+    Actual: ______
+
+  Row 816 | TestID: MAP-007 | Status: Fail
+    Module: Map Company
+    Feature: Company Switch
+    Scenario: Verify company appears in switcher
+    Steps: Map employee → Login
+    Test Data: Existing Employee
+    Expected: Newly mapped company appears in company switcher
+    Actual: ______
+
+  Row 822 | TestID: MAP-008 | Status: Fail
+    Module: Map Company
+    Feature: Employee Master
+    Scenario: Verify employee profile
+    Steps: Open Employee Master
+    Test Data: Existing Employee
+    Expected: Company mappings displayed correctly
+    Actual: ______
+
+  Row 823 | TestID: MAP-009 | Status: Fail
+    Module: Map Company
+    Feature: Employee Dashboard
+    Scenario: Verify dashboard
+    Steps: Login after switching company
+    Test Data: Existing Employee
+    Expected: Dashboard reflects selected company data
+    Actual: ______
+
+  Row 824 | TestID: MAP-010 | Status: Fail
+    Module: Map Company
+    Feature: Attendance
+    Scenario: Verify attendance company context
+    Steps: Switch company
+    Test Data: Existing Employee
+    Expected: Attendance records correspond to selected company
+    Actual: ______
+
+  Row 825 | TestID: MAP-011 | Status: Fail
+    Module: Map Company
+    Feature: Payroll
+    Scenario: Verify payroll context
+    Steps: Switch company
+    Test Data: Existing Employee
+    Expected: Payroll details reflect selected company
+    Actual: ______
+
+  Row 826 | TestID: MAP-012 | Status: Fail
+    Module: Map Company
+    Feature: Leave
+    Scenario: Verify leave records
+    Steps: Switch company
+    Test Data: Existing Employee
+    Expected: Leave data reflects selected company policies
+    Actual: ______
+
+  Row 827 | TestID: MAP-013 | Status: Fail
+    Module: Map Company
+    Feature: Audit Log
+    Scenario: Verify mapping history
+    Steps: Save mapping
+    Test Data: Existing Employee
+    Expected: Mapping activity recorded in audit log
+    Actual: ______
+
+  Row 828 | TestID: MAP-014 | Status: Fail
+    Module: Map Company
+    Feature: Performance
+    Scenario: Verify mapping performance
+    Steps: Map employee to multiple companies
+    Test Data: 10 Company Mappings
+    Expected: Operation completes within acceptable response time
+    Actual: ______
+
+  Row 830 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 854 | TestID: CONF-015 | Status: Fail
+    Module: Configuration
+    Feature: Validation
+    Scenario: Invalid reporting level
+    Steps: Enter 0
+    Test Data: Invalid
+    Expected: Validation displayed
+    Actual: No validation message displayed
+
+  Row 868 | TestID: CONF-026 | Status: Fail
+    Module: Configuration
+    Feature: Validation
+    Scenario: Missing default role
+    Steps: Leave dropdown blank
+    Test Data: Blank
+    Expected: Validation displayed
+    Actual: No blank/erase option is given
+
+  Row 878 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 907 | TestID: CF-010 | Status: Fail
+    Module: Custom Fields
+    Feature: Add Employee
+    Scenario: Verify custom field appears
+    Steps: Open Add Employee
+    Test Data: Existing Custom Field
+    Expected: Field displayed in assigned section
+    Actual: ______
+
+  Row 908 | TestID: CF-011 | Status: Fail
+    Module: Custom Fields
+    Feature: Edit Employee
+    Scenario: Verify custom field
+    Steps: Open Edit Employee
+    Test Data: Existing Employee
+    Expected: Field available for editing
+    Actual: ______
+
+  Row 909 | TestID: CF-012 | Status: Fail
+    Module: Custom Fields
+    Feature: Employee Profile
+    Scenario: Verify saved value
+    Steps: Save custom field value
+    Test Data: Valid Data
+    Expected: Value displayed correctly in profile
+    Actual: ______
+
+  Row 910 | TestID: CF-013 | Status: Fail
+    Module: Custom Fields
+    Feature: Reports
+    Scenario: Verify reporting
+    Steps: Generate employee report
+    Test Data: Existing Data
+    Expected: Custom field values included where configured
+    Actual: ______
+
+  Row 911 | TestID: CF-014 | Status: Fail
+    Module: Custom Fields
+    Feature: Import/Export
+    Scenario: Verify export
+    Steps: Export employee data
+    Test Data: Existing Data
+    Expected: Custom field values exported correctly
+    Actual: ______
+
+  Row 912 | TestID: CF-015 | Status: Fail
+    Module: Custom Fields
+    Feature: Audit Log
+    Scenario: Verify audit
+    Steps: Add custom field
+    Test Data: Valid Data
+    Expected: Action recorded in audit log
+    Actual: ______
+
+  Row 920 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: 
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 928 | TestID: HCR-002 | Status: Fail
+    Module: Employee Reports
+    Feature: Metric Cards
+    Scenario: Verify Total Headcount
+    Steps: Compare with Employee List
+    Test Data: Existing Employees
+    Expected: Total Headcount matches Employee Master
+    Actual: ______
+
+  Row 937 | TestID: DAR-002 | Status: Fail
+    Module: Employee Reports
+    Feature: Metric Cards
+    Scenario: Verify Total Departments
+    Steps: Compare Department Master
+    Test Data: Existing Data
+    Expected: Count is correct
+    Actual: ______
+
+--- Section: RIGHT (marqaitechgroup) ---
+
+  Row 10 | TestID: EMPD-005 | Status: Fail
+    Module: Employee Dashboard
+    Feature: Metrics count
+    Scenario: Verify Total Employees count
+    Steps: Compare with Employee Master
+    Test Data: Existing Employees
+    Expected: Count matches Employee Master
+    Actual: Count does not match
+
+  Row 37 | TestID: EMPD-009 | Status: Fail
+    Module: Employee Dashboard
+    Feature: Recent Employee Updates
+    Scenario: Verify recent updates displayed
+    Steps: Open Dashboard
+    Test Data: Existing Data
+    Expected: Latest employee updates displayed
+    Actual: ______
+
+  Row 70 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Acrual Results
+
+  Row 81 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 133 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 148 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 165 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 180 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 202 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 203 | TestID: EMP-019 | Status: Fail
+    Module: Add Employee Emergency Tab
+    Feature: Contact Name
+    Scenario: Verify Entering numeric values & special characters
+    Steps: Enter 123, @#$%^
+    Test Data: 123, @#$%^
+    Expected: Input Restriction /Character Restriction/ Validation message (Enter valid input)
+    Actual: Accepting Special characters & numeric values, no validation message is set
+
+  Row 213 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actaul Result
+
+  Row 249 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 262 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 273 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual  Results
+
+  Row 301 | TestID: EL-015 | Status: Fail
+    Module: Employee List
+    Feature: Export
+    Scenario: Export filtered records
+    Steps: Filter InActive → Export
+    Test Data: InActive Employees
+    Expected: Only filtered records exported
+    Actual: Exported data Failed to give selected Inactive records 
+
+  Row 329 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 382 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 385 | TestID: PR-003 | Status: Pass/Fail
+    Module: Probation Review
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No warning message is set, returned to employee list screen
+
+  Row 410 | TestID: PR-021 | Status: Fail
+    Module: Probation Review
+    Feature: Review List
+    Scenario: Verify review appears after submission
+    Steps: Submit review
+    Test Data: Valid Data
+    Expected: New review displayed in list
+    Actual: Failed to display newly submitted review
+
+  Row 417 | TestID: PR-023 | Status: Pass/Fail
+    Module: Probation Review
+    Feature: Dashboard
+    Scenario: Verify dashboard updates
+    Steps: Confirm employee
+    Test Data: Valid Employee
+    Expected: Probation count decreases and active count updates if applicable
+    Actual: Probation count not updated,                 Active count updated
+
+  Row 428 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 430 | TestID: TR-002 | Status: Pass/Fail
+    Module: Transfer Employee
+    Feature: UI
+    Scenario: Verify all page components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee dropdown, Transfer Details, Approval section, Buttons, Recent Transfer List displayed
+    Actual: Recent Transfer List not displayed
+
+  Row 431 | TestID: TR-003 | Status: Pass/Fail
+    Module: Transfer Employee
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No Unsaved warning message displayed,                                                returned to Employee List screen
+
+  Row 432 | TestID: TR-004 | Status: Pass/Fail
+    Module: Transfer Employee
+    Feature: Employee Dropdown
+    Scenario: Verify employee dropdown
+    Steps: Open dropdown
+    Test Data: Active Employees
+    Expected: Only active employees are displayed
+    Actual: Terminated employee listed
+
+  Row 456 | TestID: TR-016 | Status: Fail
+    Module: Transfer Employee
+    Feature: Request List
+    Scenario: Verify new request appears
+    Steps: Submit transfer request
+    Test Data: Valid Data
+    Expected: New request displayed in recent transfers
+    Actual: Failed to display new request details
+
+  Row 476 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 478 | TestID: RES-002 | Status: Pass/Fail
+    Module: Resignation
+    Feature: UI
+    Scenario: Verify all sections are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee Details, Resignation Details, Notice Period, Exit Process, Buttons, Request List displayed correctly
+    Actual: Request List is not displayed
+
+  Row 479 | TestID: RES-003 | Status: Fail
+    Module: Resignation
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No Unsaved warning message displayed,                                                returned to Employee List screen
+
+  Row 486 | TestID: RES-007 | Status: Fail
+    Module: Resignation
+    Feature: Date Validation
+    Scenario: Last working date before resignation date
+    Steps: Select invalid dates
+    Test Data: Invalid Dates
+    Expected: Validation displayed
+    Actual: ______
+
+  Row 500 | TestID: RES-018 | Status: Fail
+    Module: Resignation
+    Feature: Submit
+    Scenario: Submit resignation with valid details
+    Steps: Complete mandatory fields → Submit
+    Test Data: Valid Data
+    Expected: Resignation request submitted successfully
+    Actual: Failed to submit resignation request / Employee ID is required
+
+  Row 503 | TestID: RES-021 | Status: Fail
+    Module: Resignation
+    Feature: Request List
+    Scenario: Verify request appears after submission
+    Steps: Submit resignation
+    Test Data: Valid Data
+    Expected: Request added to resignation list
+    Actual: ______
+
+  Row 511 | TestID: RES-023 | Status: Fail
+    Module: Resignation
+    Feature: Employee Dashboard
+    Scenario: Verify dashboard updates
+    Steps: Submit resignation
+    Test Data: Valid Employee
+    Expected: Resignation metrics updated
+    Actual: Resignation metrics count not updated in the dashboard
+
+  Row 524 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 526 | TestID: TER-002 | Status: Pass/Fail
+    Module: Termination
+    Feature: UI
+    Scenario: Verify all page components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee dropdown, Termination Details, Exit Clearance, Buttons, Termination Records List displayed correctly
+    Actual: Termination Records not displayed
+
+  Row 527 | TestID: TER-003 | Status: Fail
+    Module: Termination
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No Unsaved warning message displayed,                                                returned to Employee List screen
+
+  Row 528 | TestID: TER-004 | Status: Pass/Fail
+    Module: Termination
+    Feature: Employee Dropdown
+    Scenario: Verify employee dropdown
+    Steps: Open dropdown
+    Test Data: Active Employees
+    Expected: Only active employees are displayed
+    Actual: Terminated employee name is displayed
+
+  Row 534 | TestID: TER-008 | Status: Fail
+    Module: Termination
+    Feature: Date Validation
+    Scenario: Last working date before termination date
+    Steps: Select invalid dates
+    Test Data: Invalid Dates
+    Expected: Validation displayed
+    Actual: Accepted Invalid dates
+
+  Row 554 | TestID: TER-017 | Status: Fail
+    Module: Termination
+    Feature: Records List
+    Scenario: Verify new termination appears
+    Steps: Submit termination
+    Test Data: Valid Data
+    Expected: New record displayed in list
+    Actual: Failed to display in list
+
+  Row 576 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 578 | TestID: REJ-002 | Status: Pass/Fail
+    Module: Rejoin Employee
+    Feature: UI
+    Scenario: Verify all page components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee dropdown, Rejoin Details, Continuity Options, Comments, Buttons, Rejoin Request List displayed correctly
+    Actual: Rejoin Request List not displayed
+
+  Row 579 | TestID: REJ-003 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Navigation
+    Scenario: Verify Cancel button
+    Steps: Click Cancel
+    Test Data: N/A
+    Expected: Unsaved changes warning (if applicable) and return to previous page
+    Actual: No Unsaved warning message displayed,                                                returned to Employee List screen
+
+  Row 586 | TestID: REJ-008 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Employee Code
+    Scenario: Verify new employee code field
+    Steps: Enter code
+    Test Data: EMP1025
+    Expected: New employee code accepted if unique
+    Actual: ______
+
+  Row 605 | TestID: REJ-017 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Submit
+    Scenario: Submit rejoin request
+    Steps: Complete mandatory fields → Submit
+    Test Data: Valid Data
+    Expected: Rejoin request submitted successfully
+    Actual: Failed to submit rejoin request, Employee ID is required
+
+  Row 607 | TestID: REJ-019 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Request List
+    Scenario: Verify request appears after submission
+    Steps: Submit request
+    Test Data: Valid Data
+    Expected: New request displayed in list
+    Actual: ______
+
+  Row 614 | TestID: REJ-020 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Employee Master
+    Scenario: Approve rejoin
+    Steps: Submit & approve
+    Test Data: Valid Employee
+    Expected: Employee profile reactivated or new employment record created
+    Actual: Employee ID is required
+
+  Row 615 | TestID: REJ-021 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Employee List
+    Scenario: Verify employee appears
+    Steps: Open Employee List
+    Test Data: Rejoined Employee
+    Expected: Employee listed as Active
+    Actual: ______
+
+  Row 616 | TestID: REJ-022 | Status: Fail
+    Module: Rejoin Employee
+    Feature: Dashboard
+    Scenario: Verify dashboard updates
+    Steps: Approve rejoin
+    Test Data: Valid Employee
+    Expected: Active employee count and new joiner metrics updated
+    Actual: ______
+
+  Row 629 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 678 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 688 | TestID: EMPSET-009 | Status: Fail
+    Module: Employee Settings
+    Feature: Active Accounts
+    Scenario: Verify active account count
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Active account count displayed correctly
+    Actual: ______
+
+  Row 689 | TestID: EMPSET-010 | Status: Fail
+    Module: Employee Settings
+    Feature: Inactive Accounts
+    Scenario: Verify inactive account count
+    Steps: Open page
+    Test Data: Existing Data
+    Expected: Inactive account count displayed correctly
+    Actual: ______
+
+  Row 723 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: EXpected Result
+    Actual: Actual Result
+
+  Row 727 | TestID: INV-004 | Status: Fail
+    Module: Invite Employees
+    Feature: Invite All
+    Scenario: Invite all employees without accounts
+    Steps: Click Invite All Employees
+    Test Data: Employees without accounts
+    Expected: Login accounts are created (if required) and invitation emails are sent successfully
+    Actual: Failed to invite all employees
+
+  Row 732 | TestID: INV-005 | Status: Fail
+    Module: Invite Employees
+    Feature: Invite Selected
+    Scenario: Invite one employee
+    Steps: Select one employee → Invite Selected
+    Test Data: One Employee
+    Expected: Invitation sent successfully
+    Actual: No list is displayed to select employees to invite
+
+  Row 736 | TestID: INV-006 | Status: Fail
+    Module: Invite Employees
+    Feature: Employee Selection
+    Scenario: Verify employee list loads
+    Steps: Open Invite page
+    Test Data: Existing Employees
+    Expected: Employees displayed correctly
+    Actual: Employees list not displayed
+
+  Row 741 | TestID: INV-007 | Status: Fail
+    Module: Invite Employees
+    Feature: Validation
+    Scenario: Invite Selected without selecting employees
+    Steps: Click Invite Selected
+    Test Data: No Selection
+    Expected: Validation message displayed
+    Actual: ______
+
+  Row 746 | TestID: INV-008 | Status: Fail
+    Module: Invite Employees
+    Feature: Email
+    Scenario: Verify invitation email content
+    Steps: Open received email
+    Test Data: Valid Email
+    Expected: Email contains employee name, login email, temporary password, login URL, and security instructions
+    Actual: ______
+
+  Row 750 | TestID: INV-009 | Status: Fail
+    Module: Invite Employees
+    Feature: Employee Settings
+    Scenario: Send invitation
+    Steps: Invite employee
+    Test Data: Existing Employee
+    Expected: Employee account status changes from "No Account" to "With Account" (if accounts are auto-created)
+    Actual: ______
+
+  Row 751 | TestID: INV-010 | Status: Fail
+    Module: Invite Employees
+    Feature: Login Credentials
+    Scenario: Verify credentials
+    Steps: Open Login Credentials tab
+    Test Data: Invited Employee
+    Expected: Login credentials displayed correctly
+    Actual: ______
+
+  Row 752 | TestID: INV-011 | Status: Fail
+    Module: Invite Employees
+    Feature: Employee Master
+    Scenario: Verify employee record
+    Steps: Open Employee Master
+    Test Data: Invited Employee
+    Expected: Employee profile linked with login account
+    Actual: ______
+
+  Row 753 | TestID: INV-012 | Status: Fail
+    Module: Invite Employees
+    Feature: Notifications
+    Scenario: Verify notification log
+    Steps: Send invitation
+    Test Data: Valid Employee
+    Expected: Invitation event recorded
+    Actual: ______
+
+  Row 754 | TestID: INV-013 | Status: Fail
+    Module: Invite Employees
+    Feature: Audit Log
+    Scenario: Verify audit trail
+    Steps: Send invitation
+    Test Data: Valid Employee
+    Expected: Audit log records invitation activity
+    Actual: ______
+
+  Row 755 | TestID: INV-014 | Status: Fail
+    Module: Invite Employees
+    Feature: Performance
+    Scenario: Verify invitation processing time
+    Steps: Invite multiple employees
+    Test Data: 100 Employees
+    Expected: Invitations processed within acceptable time
+    Actual: ______
+
+  Row 757 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 767 | TestID: BULK-005 | Status: Fail
+    Module: Bulk Operations
+    Feature: Generate Selected
+    Scenario: Generate password for one employee
+    Steps: Select employee → Generate Selected
+    Test Data: One Employee
+    Expected: Password generated only for selected employee
+    Actual: ______
+
+  Row 775 | TestID: BULK-007 | Status: Fail
+    Module: Bulk Operations
+    Feature: Password Validation
+    Scenario: Blank password
+    Steps: Leave password empty
+    Test Data: Blank
+    Expected: Validation displayed
+    Actual: Admin not found error
+
+  Row 782 | TestID: BULK-008 | Status: Fail
+    Module: Bulk Operations
+    Feature: Confirmation
+    Scenario: Confirm bulk password reset
+    Steps: Click Generate Password
+    Test Data: Existing Employees
+    Expected: Confirmation dialog displayed before execution
+    Actual: ______
+
+  Row 785 | TestID: BULK-009 | Status: Fail
+    Module: Bulk Operations
+    Feature: Processing
+    Scenario: Verify success message
+    Steps: Complete operation
+    Test Data: Existing Employees
+    Expected: Success notification displayed
+    Actual: ______
+
+  Row 786 | TestID: BULK-010 | Status: Fail
+    Module: Bulk Operations
+    Feature: Login Credentials
+    Scenario: Verify password update
+    Steps: Open Login Credentials
+    Test Data: Updated Employee
+    Expected: Password reset recorded
+    Actual: ______
+
+  Row 787 | TestID: BULK-011 | Status: Fail
+    Module: Bulk Operations
+    Feature: Employee Settings
+    Scenario: Verify account creation
+    Steps: Auto Generate All
+    Test Data: Employee without account
+    Expected: Account status changes to "With Account"
+    Actual: ______
+
+  Row 788 | TestID: BULK-012 | Status: Fail
+    Module: Bulk Operations
+    Feature: Authentication
+    Scenario: Login using new password
+    Steps: Login
+    Test Data: Updated Credentials
+    Expected: Login successful
+    Actual: ______
+
+  Row 789 | TestID: BULK-013 | Status: Fail
+    Module: Bulk Operations
+    Feature: Notifications
+    Scenario: Verify notification
+    Steps: Generate passwords
+    Test Data: Existing Employees
+    Expected: Password reset email sent (if configured)
+    Actual: ______
+
+  Row 790 | TestID: BULK-014 | Status: Fail
+    Module: Bulk Operations
+    Feature: Audit Logs
+    Scenario: Verify audit trail
+    Steps: Complete bulk operation
+    Test Data: Existing Employees
+    Expected: Bulk action recorded with user, time, and affected employee count
+    Actual: ______
+
+  Row 791 | TestID: BULK-015 | Status: Fail
+    Module: Bulk Operations
+    Feature: Performance
+    Scenario: Generate passwords for large dataset
+    Steps: Execute Auto Generate All
+    Test Data: 1,000+ Employees
+    Expected: Operation completes within acceptable time and displays progress
+    Actual: ______
+
+  Row 793 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 795 | TestID: MAP-002 | Status: Fail
+    Module: Map Company
+    Feature: UI
+    Scenario: Verify all UI components are displayed
+    Steps: Open page
+    Test Data: N/A
+    Expected: Employee selection block, search bar, mapping section (if applicable), action buttons displayed correctly
+    Actual: ______
+
+  Row 797 | TestID: MAP-004 | Status: Fail
+    Module: Map Company
+    Feature: Employee Search
+    Scenario: Search employee by name
+    Steps: Enter employee name
+    Test Data: John Smith
+    Expected: Matching employee displayed
+    Actual: ______
+
+  Row 802 | TestID: MAP-005 | Status: Fail
+    Module: Map Company
+    Feature: Company Mapping
+    Scenario: Map employee to another company
+    Steps: Select employee → Add company mapping → Save
+    Test Data: Existing Employee + Company
+    Expected: Employee successfully mapped to selected company
+    Actual: ______
+
+  Row 809 | TestID: MAP-006 | Status: Fail
+    Module: Map Company
+    Feature: Validation
+    Scenario: Save without employee selection
+    Steps: Click Save
+    Test Data: No Employee
+    Expected: Validation message displayed
+    Actual: ______
+
+  Row 816 | TestID: MAP-007 | Status: Fail
+    Module: Map Company
+    Feature: Company Switch
+    Scenario: Verify company appears in switcher
+    Steps: Map employee → Login
+    Test Data: Existing Employee
+    Expected: Newly mapped company appears in company switcher
+    Actual: ______
+
+  Row 822 | TestID: MAP-008 | Status: Fail
+    Module: Map Company
+    Feature: Employee Master
+    Scenario: Verify employee profile
+    Steps: Open Employee Master
+    Test Data: Existing Employee
+    Expected: Company mappings displayed correctly
+    Actual: ______
+
+  Row 823 | TestID: MAP-009 | Status: Fail
+    Module: Map Company
+    Feature: Employee Dashboard
+    Scenario: Verify dashboard
+    Steps: Login after switching company
+    Test Data: Existing Employee
+    Expected: Dashboard reflects selected company data
+    Actual: ______
+
+  Row 824 | TestID: MAP-010 | Status: Fail
+    Module: Map Company
+    Feature: Attendance
+    Scenario: Verify attendance company context
+    Steps: Switch company
+    Test Data: Existing Employee
+    Expected: Attendance records correspond to selected company
+    Actual: ______
+
+  Row 825 | TestID: MAP-011 | Status: Fail
+    Module: Map Company
+    Feature: Payroll
+    Scenario: Verify payroll context
+    Steps: Switch company
+    Test Data: Existing Employee
+    Expected: Payroll details reflect selected company
+    Actual: ______
+
+  Row 826 | TestID: MAP-012 | Status: Fail
+    Module: Map Company
+    Feature: Leave
+    Scenario: Verify leave records
+    Steps: Switch company
+    Test Data: Existing Employee
+    Expected: Leave data reflects selected company policies
+    Actual: ______
+
+  Row 827 | TestID: MAP-013 | Status: Fail
+    Module: Map Company
+    Feature: Audit Log
+    Scenario: Verify mapping history
+    Steps: Save mapping
+    Test Data: Existing Employee
+    Expected: Mapping activity recorded in audit log
+    Actual: ______
+
+  Row 828 | TestID: MAP-014 | Status: Fail
+    Module: Map Company
+    Feature: Performance
+    Scenario: Verify mapping performance
+    Steps: Map employee to multiple companies
+    Test Data: 10 Company Mappings
+    Expected: Operation completes within acceptable response time
+    Actual: ______
+
+  Row 830 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 854 | TestID: CONF-015 | Status: Fail
+    Module: Configuration
+    Feature: Validation
+    Scenario: Invalid reporting level
+    Steps: Enter 0
+    Test Data: Invalid
+    Expected: Validation displayed
+    Actual: No validation message displayed
+
+  Row 868 | TestID: CONF-026 | Status: Fail
+    Module: Configuration
+    Feature: Validation
+    Scenario: Missing default role
+    Steps: Leave dropdown blank
+    Test Data: Blank
+    Expected: Validation displayed
+    Actual: No blank/erase option is given
+
+  Row 878 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 907 | TestID: CF-010 | Status: Fail
+    Module: Custom Fields
+    Feature: Add Employee
+    Scenario: Verify custom field appears
+    Steps: Open Add Employee
+    Test Data: Existing Custom Field
+    Expected: Field displayed in assigned section
+    Actual: ______
+
+  Row 908 | TestID: CF-011 | Status: Fail
+    Module: Custom Fields
+    Feature: Edit Employee
+    Scenario: Verify custom field
+    Steps: Open Edit Employee
+    Test Data: Existing Employee
+    Expected: Field available for editing
+    Actual: ______
+
+  Row 909 | TestID: CF-012 | Status: Fail
+    Module: Custom Fields
+    Feature: Employee Profile
+    Scenario: Verify saved value
+    Steps: Save custom field value
+    Test Data: Valid Data
+    Expected: Value displayed correctly in profile
+    Actual: ______
+
+  Row 910 | TestID: CF-013 | Status: Fail
+    Module: Custom Fields
+    Feature: Reports
+    Scenario: Verify reporting
+    Steps: Generate employee report
+    Test Data: Existing Data
+    Expected: Custom field values included where configured
+    Actual: ______
+
+  Row 911 | TestID: CF-014 | Status: Fail
+    Module: Custom Fields
+    Feature: Import/Export
+    Scenario: Verify export
+    Steps: Export employee data
+    Test Data: Existing Data
+    Expected: Custom field values exported correctly
+    Actual: ______
+
+  Row 912 | TestID: CF-015 | Status: Fail
+    Module: Custom Fields
+    Feature: Audit Log
+    Scenario: Verify audit
+    Steps: Add custom field
+    Test Data: Valid Data
+    Expected: Action recorded in audit log
+    Actual: ______
+
+  Row 920 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: 
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 928 | TestID: HCR-002 | Status: Fail
+    Module: Employee Reports
+    Feature: Metric Cards
+    Scenario: Verify Total Headcount
+    Steps: Compare with Employee List
+    Test Data: Existing Employees
+    Expected: Total Headcount matches Employee Master
+    Actual: ______
+
+  Row 937 | TestID: DAR-002 | Status: Fail
+    Module: Employee Reports
+    Feature: Metric Cards
+    Scenario: Verify Total Departments
+    Steps: Compare Department Master
+    Test Data: Existing Data
+    Expected: Count is correct
+    Actual: ______
+
+================================================================================
+SHEET: Leave Management
+================================================================================
+
+--- Section: LEFT (3boxeshrms.com) ---
+
+  Row 30 | TestID: LD-012 | Status: Fail
+    Module: Leave Dashboard
+    Feature: Leave List
+    Scenario: Verify employee name
+    Steps: Compare Employee Master
+    Test Data: Existing Data
+    Expected: Employee name displayed correctly
+    Actual: employee leave records does not match with employee master
+
+  Row 50 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 62 | TestID: AL-005 | Status: Fail
+    Module: Add Leave
+    Feature: Date Validation
+    Scenario: To Date before From Date
+    Steps: Select From Date and earlier To Date
+    Test Data: From: 18-Aug, To: 15-Aug
+    Expected: Validation message: "To date cannot be earlier than From date."
+    Actual: No validation is set, Employee record not found
+
+  Row 84 | TestID: AL-014 | Status: Fail
+    Module: Add Leave
+    Feature: Form Submission
+    Scenario: Submit valid leave
+    Steps: Fill all mandatory fields → Add Leave
+    Test Data: Casual Leave, 15–18 Aug, valid reason
+    Expected: Leave request successfully created
+    Actual: Employee record not found
+
+  Row 107 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 124 | TestID: HRL-005 | Status: Fail
+    Module: Leave
+    Feature: Leave Type
+    Scenario: Open leave type dropdown
+    Steps: Click Leave Type
+    Test Data: N/A
+    Expected: Available leave types are displayed
+    Actual: Failed to display leave types
+
+  Row 155 | TestID: HRL-012 | Status: Fail
+    Module: Leave
+    Feature: Leave Balance
+    Scenario: Verify Leave Balances card
+    Steps: Select employee
+    Test Data: John Smith
+    Expected: Employee's current leave balances are displayed
+    Actual: Failed to display current leave balance
+
+  Row 162 | TestID: HRL-013 | Status: Fail
+    Module: Leave
+    Feature: Recent Requests
+    Scenario: Verify recent requests card
+    Steps: Select employee
+    Test Data: Existing requests
+    Expected: Recent requests for selected employee are displayed
+    Actual: Failed to display recent requests
+
+  Row 167 | TestID: HRL-014 | Status: Fail
+    Module: Leave
+    Feature: Proxy Application
+    Scenario: Submit valid leave on behalf of employee
+    Steps: Select employee → fill form → Apply Leave
+    Test Data: John, Casual Leave, 20–22 Aug
+    Expected: Leave request is successfully submitted for John
+    Actual: Failed to submit leave application on behalf of employee
+
+  Row 175 | TestID: HRL-016 | Status: Fail
+    Module: Leave
+    Feature: Approval Workflow
+    Scenario: Verify standard approval workflow
+    Steps: HR submits proxy leave
+    Test Data: Valid request
+    Expected: Request follows configured approval workflow
+    Actual: ______
+
+  Row 210 | TestID: LE-003 | Status: Fail
+    Module: Leave Encashment
+    Feature: Request Encashment
+    Scenario: Open request form
+    Steps: Click Request Encashment
+    Test Data: N/A
+    Expected: Encashment request form opens successfully
+    Actual: Failed to open Encashment request form
+
+  Row 211 | TestID: LE-004 | Status: Fail
+    Module: Leave Encashment
+    Feature: Request Form
+    Scenario: Verify all fields
+    Steps: Open request form
+    Test Data: N/A
+    Expected: All configured mandatory and optional fields are displayed
+    Actual: ______
+
+  Row 212 | TestID: LE-005 | Status: Fail
+    Module: Leave Encashment
+    Feature: Employee
+    Scenario: Select employee
+    Steps: Select employee from available list
+    Test Data: EMP001 – John
+    Expected: Employee is selected successfully
+    Actual: Failed to display employee list
+
+  Row 214 | TestID: LE-006 | Status: Fail
+    Module: Leave Encashment
+    Feature: Leave Type
+    Scenario: Select eligible leave type
+    Steps: Select encashable leave type
+    Test Data: Annual Leave
+    Expected: Leave type is selected successfully
+    Actual: ______
+
+  Row 216 | TestID: LE-007 | Status: Fail
+    Module: Leave Encashment
+    Feature: Leave Balance
+    Scenario: Verify available balance
+    Steps: Select employee and leave type
+    Test Data: Balance: 20 days
+    Expected: Available encashable balance is displayed correctly
+    Actual: ______
+
+  Row 217 | TestID: LE-008 | Status: Fail
+    Module: Leave Encashment
+    Feature: Days
+    Scenario: Enter valid encashment days
+    Steps: Enter number within allowed balance
+    Test Data: 5.0
+    Expected: Value is accepted
+    Actual: ______
+
+  Row 224 | TestID: LE-009 | Status: Fail
+    Module: Leave Encashment
+    Feature: Rate
+    Scenario: Verify rate/day
+    Steps: Select employee and leave type
+    Test Data: ₹1,500
+    Expected: Rate is calculated according to configured basis
+    Actual: ______
+
+  Row 228 | TestID: LE-011 | Status: Fail
+    Module: Leave Encashment
+    Feature: Tax
+    Scenario: Verify tax calculation
+    Steps: Submit encashment subject to tax
+    Test Data: Amount ₹7,500
+    Expected: Tax is calculated according to configured tax rules
+    Actual: ______
+
+  Row 230 | TestID: LE-012 | Status: Fail
+    Module: Leave Encashment
+    Feature: Net Amount
+    Scenario: Verify net amount
+    Steps: Calculate Amount − Tax
+    Test Data: ₹7,500 − ₹750
+    Expected: Correct payable amount is calculated
+    Actual: ______
+
+  Row 231 | TestID: LE-013 | Status: Fail
+    Module: Leave Encashment
+    Feature: Duplicate Request
+    Scenario: Submit same request twice
+    Steps: Create identical request
+    Test Data: Same employee/type/days
+    Expected: Duplicate request is prevented where policy requires
+    Actual: ______
+
+  Row 232 | TestID: LE-014 | Status: Fail
+    Module: Leave Encashment
+    Feature: Eligibility
+    Scenario: Employee not eligible
+    Steps: Select employee without encashment eligibility
+    Test Data: Employee data
+    Expected: System prevents request and explains eligibility requirement
+    Actual: ______
+
+  Row 233 | TestID: LE-015 | Status: Fail
+    Module: Leave Encashment
+    Feature: Employment Status
+    Scenario: Inactive employee
+    Steps: Select inactive/terminated employee
+    Test Data: Terminated employee
+    Expected: Request is prevented unless business rules explicitly allow it
+    Actual: ______
+
+  Row 234 | TestID: LE-016 | Status: Fail
+    Module: Leave Encashment
+    Feature: Calculation
+    Scenario: Verify amount formula
+    Steps: Enter eligible days and rate
+    Test Data: 10 days × ₹2,000
+    Expected: Amount = ₹20,000
+    Actual: ______
+
+  Row 236 | TestID: LE-017 | Status: Fail
+    Module: Leave Encashment
+    Feature: Tax
+    Scenario: Verify tax percentage
+    Steps: Apply configured tax rate
+    Test Data: ₹20,000 at 10%
+    Expected: Tax = ₹2,000
+    Actual: ______
+
+  Row 238 | TestID: LE-018 | Status: Fail
+    Module: Leave Encashment
+    Feature: Calculation
+    Scenario: Verify rate based on salary
+    Steps: Compare salary and encashment basis
+    Test Data: Basic/Gross salary
+    Expected: Correct salary component is used
+    Actual: ______
+
+  Row 240 | TestID: LE-019 | Status: Fail
+    Module: Leave Encashment
+    Feature: Balance
+    Scenario: Verify balance after approval
+    Steps: Approve encashment
+    Test Data: 5 days
+    Expected: Encashable leave balance decreases correctly
+    Actual: ______
+
+  Row 244 | TestID: LE-020 | Status: Fail
+    Module: Leave Encashment
+    Feature: Approval
+    Scenario: Verify request submission
+    Steps: Submit valid encashment request
+    Test Data: Valid data
+    Expected: Request is created with Pending status
+    Actual: ______
+
+  Row 249 | TestID: LE-021 | Status: Fail
+    Module: Leave Encashment
+    Feature: Status
+    Scenario: Verify status transition
+    Steps: Submit → Approve
+    Test Data: Valid request
+    Expected: Pending → Approved transition occurs correctly
+    Actual: ______
+
+  Row 252 | TestID: LE-022 | Status: Fail
+    Module: Leave Encashment
+    Feature: Actions
+    Scenario: Verify Actions menu
+    Steps: Click Actions for request
+    Test Data: Existing request
+    Expected: Available actions are displayed
+    Actual: ______
+
+  Row 257 | TestID: LE-023 | Status: Fail
+    Module: Leave Encashment
+    Feature: Search/Filter
+    Scenario: Search employee
+    Steps: Search by employee name/code
+    Test Data: EMP001
+    Expected: Matching requests are displayed
+    Actual: ______
+
+  Row 258 | TestID: LE-024 | Status: Fail
+    Module: Leave Encashment
+    Feature: Employee
+    Scenario: Verify employee leave balance
+    Steps: Approve encashment → check employee balance
+    Test Data: 5 days
+    Expected: Encashment is reflected correctly
+    Actual: ______
+
+  Row 259 | TestID: LE-025 | Status: Fail
+    Module: Leave Encashment
+    Feature: Payroll
+    Scenario: Verify payroll integration
+    Steps: Approve encashment → process payroll
+    Test Data: ₹7,500
+    Expected: Encashment amount appears in appropriate payroll component
+    Actual: ______
+
+  Row 261 | TestID: LE-026 | Status: Fail
+    Module: Leave Encashment
+    Feature: Employee Dashboard
+    Scenario: Verify balance update
+    Steps: Approve encashment → check ESS
+    Test Data: Employee
+    Expected: Updated leave balance is displayed
+    Actual: ______
+
+  Row 262 | TestID: LE-027 | Status: Fail
+    Module: Leave Encashment
+    Feature: Notifications
+    Scenario: Verify submission notification
+    Steps: Submit request
+    Test Data: Valid request
+    Expected: Employee/approver receives notification
+    Actual: ______
+
+  Row 263 | TestID: LE-028 | Status: Fail
+    Module: Leave Encashment
+    Feature: Notifications
+    Scenario: Verify approval notification
+    Steps: Approve request
+    Test Data: Valid request
+    Expected: Employee receives approval notification
+    Actual: ______
+
+  Row 264 | TestID: LE-029 | Status: Fail
+    Module: Leave Encashment
+    Feature: Audit
+    Scenario: Verify audit trail
+    Steps: Submit/approve/reject request
+    Test Data: Valid request
+    Expected: User, action, date/time and status change are logged
+    Actual: ______
+
+  Row 268 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 334 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 339 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 354 | TestID: LPS-004 | Status: Fail
+    Module: Leave Module
+    Feature: Policy Title
+    Scenario: Enter valid title
+    Steps: Enter policy title
+    Test Data: Annual Leave Policy
+    Expected: Value is accepted
+    Actual: Company ID is required 
+
+  Row 365 | TestID: LPS-006 | Status: Fail
+    Module: Leave Module
+    Feature: Description
+    Scenario: Enter valid description
+    Steps: Enter description
+    Test Data: "Rules governing annual leave eligibility."
+    Expected: Description is accepted
+    Actual: ______
+
+  Row 385 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 386 | TestID: LPS-009 | Status: Fail
+    Module: Leave Module
+    Feature: Policy CRUD
+    Scenario: Verify newly created policy in list
+    Steps: Create policy → return to list
+    Test Data: Annual Leave Policy
+    Expected: New policy appears in list
+    Actual: Failed to create new policy / Company ID is required
+
+  Row 468 | TestID: PR-002 | Status: Fail
+    Module: Leave Module
+    Feature: Rule Name
+    Scenario: Enter valid rule name
+    Steps: Enter rule name
+    Test Data: Standard Annual Leave Rule
+    Expected: Value is accepted
+    Actual: —
+
+  Row 487 | TestID: PR-007 | Status: Fail
+    Module: Leave Module
+    Feature: Branch & Department
+    Scenario: Verify department filtering
+    Steps: Select branch → open department
+    Test Data: Bangalore
+    Expected: Departments belonging to selected branch are displayed if filtering is configured
+    Actual: Failed to display departments related to selected branch
+
+  Row 525 | TestID: PR-016 | Status: Fail
+    Module: Leave Module
+    Feature: Carry Forward
+    Scenario: Enter maximum carry-forward days
+    Steps: Enter value
+    Test Data: 10.0
+    Expected: Value accepted
+    Actual: Company ID is required
+
+  Row 535 | TestID: PR-018 | Status: Fail
+    Module: Leave Module
+    Feature: Rule Settings
+    Scenario: Enable all settings
+    Steps: Turn all toggles ON → Create
+    Test Data: All ON
+    Expected: Rule is created successfully and all settings persist
+    Actual: Company ID is required
+
+  Row 541 | TestID: PR-019 | Status: Fail
+    Module: Leave Module
+    Feature: Create Rule
+    Scenario: Create rule with minimum valid data
+    Steps: Fill required fields → Create
+    Test Data: Valid data
+    Expected: Rule created successfully
+    Actual: Company ID is required
+
+  Row 547 | TestID: PR-020 | Status: Fail
+    Module: Leave Module
+    Feature: Rule List
+    Scenario: Verify newly created rule
+    Steps: Create rule
+    Test Data: Rule A
+    Expected: Rule appears in list
+    Actual: Company ID is required
+
+  Row 555 | TestID: PR-021 | Status: Fail
+    Module: Leave Module
+    Feature: Rule CRUD
+    Scenario: Edit existing rule
+    Steps: Click Edit
+    Test Data: Rule A
+    Expected: Existing values populate correctly
+    Actual: —
+
+  Row 578 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 589 | TestID: LTM-003 | Status: Fail
+    Module: Leave
+    Feature: Policy Rule Mapping
+    Scenario: Verify selected rule context
+    Steps: Select Rule A
+    Test Data: Rule A
+    Expected: Mapping section displays data belonging to Rule A
+    Actual: —
+
+  Row 789 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario 
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 840 | TestID: LT-009 | Status: Fail
+    Module: Leave
+    Feature: View
+    Scenario: View leave type
+    Steps: Click View
+    Test Data: Casual Leave
+    Expected: Complete leave type details are displayed
+    Actual: view action is not displayed
+
+  Row 841 | TestID: LT-010 | Status: Fail
+    Module: Leave
+    Feature: Edit
+    Scenario: Edit leave type name
+    Steps: Click Edit → change name → save
+    Test Data: Casual → Casual Leave Updated
+    Expected: Updated name appears in list
+    Actual: Failed to edit
+
+  Row 846 | TestID: LT-011 | Status: Fail
+    Module: Leave
+    Feature: Delete
+    Scenario: Delete leave type
+    Steps: Click Delete
+    Test Data: Test Leave
+    Expected: Confirmation dialog appears
+    Actual: confirmation dialog failed to appear
+
+  Row 857 | TestID: LT-014 | Status: Fail
+    Module: Leave
+    Feature: Policy Rule
+    Scenario: Verify mapped leave type
+    Steps: Create leave type → map to policy rule
+    Test Data: CL
+    Expected: Leave type can be mapped successfully
+    Actual: —
+
+--- Section: RIGHT (marqaitechgroup) ---
+
+  Row 30 | TestID: LD-012 | Status: Fail
+    Module: Leave Dashboard
+    Feature: Leave List
+    Scenario: Verify employee name
+    Steps: Compare Employee Master
+    Test Data: Existing Data
+    Expected: Employee name displayed correctly
+    Actual: employee leave records does not match with employee master
+
+  Row 50 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 62 | TestID: AL-005 | Status: Fail
+    Module: Add Leave
+    Feature: Date Validation
+    Scenario: To Date before From Date
+    Steps: Select From Date and earlier To Date
+    Test Data: From: 18-Aug, To: 15-Aug
+    Expected: Validation message: "To date cannot be earlier than From date."
+    Actual: No validation is set, Employee record not found
+
+  Row 84 | TestID: AL-014 | Status: Fail
+    Module: Add Leave
+    Feature: Form Submission
+    Scenario: Submit valid leave
+    Steps: Fill all mandatory fields → Add Leave
+    Test Data: Casual Leave, 15–18 Aug, valid reason
+    Expected: Leave request successfully created
+    Actual: Employee record not found
+
+  Row 107 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 124 | TestID: HRL-005 | Status: Fail
+    Module: Leave
+    Feature: Leave Type
+    Scenario: Open leave type dropdown
+    Steps: Click Leave Type
+    Test Data: N/A
+    Expected: Available leave types are displayed
+    Actual: Failed to display leave types
+
+  Row 155 | TestID: HRL-012 | Status: Fail
+    Module: Leave
+    Feature: Leave Balance
+    Scenario: Verify Leave Balances card
+    Steps: Select employee
+    Test Data: John Smith
+    Expected: Employee's current leave balances are displayed
+    Actual: Failed to display current leave balance
+
+  Row 162 | TestID: HRL-013 | Status: Fail
+    Module: Leave
+    Feature: Recent Requests
+    Scenario: Verify recent requests card
+    Steps: Select employee
+    Test Data: Existing requests
+    Expected: Recent requests for selected employee are displayed
+    Actual: Failed to display recent requests
+
+  Row 167 | TestID: HRL-014 | Status: Fail
+    Module: Leave
+    Feature: Proxy Application
+    Scenario: Submit valid leave on behalf of employee
+    Steps: Select employee → fill form → Apply Leave
+    Test Data: John, Casual Leave, 20–22 Aug
+    Expected: Leave request is successfully submitted for John
+    Actual: Failed to submit leave application on behalf of employee
+
+  Row 175 | TestID: HRL-016 | Status: Fail
+    Module: Leave
+    Feature: Approval Workflow
+    Scenario: Verify standard approval workflow
+    Steps: HR submits proxy leave
+    Test Data: Valid request
+    Expected: Request follows configured approval workflow
+    Actual: ______
+
+  Row 210 | TestID: LE-003 | Status: Fail
+    Module: Leave Encashment
+    Feature: Request Encashment
+    Scenario: Open request form
+    Steps: Click Request Encashment
+    Test Data: N/A
+    Expected: Encashment request form opens successfully
+    Actual: Failed to open Encashment request form
+
+  Row 211 | TestID: LE-004 | Status: Fail
+    Module: Leave Encashment
+    Feature: Request Form
+    Scenario: Verify all fields
+    Steps: Open request form
+    Test Data: N/A
+    Expected: All configured mandatory and optional fields are displayed
+    Actual: ______
+
+  Row 212 | TestID: LE-005 | Status: Fail
+    Module: Leave Encashment
+    Feature: Employee
+    Scenario: Select employee
+    Steps: Select employee from available list
+    Test Data: EMP001 – John
+    Expected: Employee is selected successfully
+    Actual: Failed to display employee list
+
+  Row 214 | TestID: LE-006 | Status: Fail
+    Module: Leave Encashment
+    Feature: Leave Type
+    Scenario: Select eligible leave type
+    Steps: Select encashable leave type
+    Test Data: Annual Leave
+    Expected: Leave type is selected successfully
+    Actual: ______
+
+  Row 216 | TestID: LE-007 | Status: Fail
+    Module: Leave Encashment
+    Feature: Leave Balance
+    Scenario: Verify available balance
+    Steps: Select employee and leave type
+    Test Data: Balance: 20 days
+    Expected: Available encashable balance is displayed correctly
+    Actual: ______
+
+  Row 217 | TestID: LE-008 | Status: Fail
+    Module: Leave Encashment
+    Feature: Days
+    Scenario: Enter valid encashment days
+    Steps: Enter number within allowed balance
+    Test Data: 5.0
+    Expected: Value is accepted
+    Actual: ______
+
+  Row 224 | TestID: LE-009 | Status: Fail
+    Module: Leave Encashment
+    Feature: Rate
+    Scenario: Verify rate/day
+    Steps: Select employee and leave type
+    Test Data: ₹1,500
+    Expected: Rate is calculated according to configured basis
+    Actual: ______
+
+  Row 228 | TestID: LE-011 | Status: Fail
+    Module: Leave Encashment
+    Feature: Tax
+    Scenario: Verify tax calculation
+    Steps: Submit encashment subject to tax
+    Test Data: Amount ₹7,500
+    Expected: Tax is calculated according to configured tax rules
+    Actual: ______
+
+  Row 230 | TestID: LE-012 | Status: Fail
+    Module: Leave Encashment
+    Feature: Net Amount
+    Scenario: Verify net amount
+    Steps: Calculate Amount − Tax
+    Test Data: ₹7,500 − ₹750
+    Expected: Correct payable amount is calculated
+    Actual: ______
+
+  Row 231 | TestID: LE-013 | Status: Fail
+    Module: Leave Encashment
+    Feature: Duplicate Request
+    Scenario: Submit same request twice
+    Steps: Create identical request
+    Test Data: Same employee/type/days
+    Expected: Duplicate request is prevented where policy requires
+    Actual: ______
+
+  Row 232 | TestID: LE-014 | Status: Fail
+    Module: Leave Encashment
+    Feature: Eligibility
+    Scenario: Employee not eligible
+    Steps: Select employee without encashment eligibility
+    Test Data: Employee data
+    Expected: System prevents request and explains eligibility requirement
+    Actual: ______
+
+  Row 233 | TestID: LE-015 | Status: Fail
+    Module: Leave Encashment
+    Feature: Employment Status
+    Scenario: Inactive employee
+    Steps: Select inactive/terminated employee
+    Test Data: Terminated employee
+    Expected: Request is prevented unless business rules explicitly allow it
+    Actual: ______
+
+  Row 234 | TestID: LE-016 | Status: Fail
+    Module: Leave Encashment
+    Feature: Calculation
+    Scenario: Verify amount formula
+    Steps: Enter eligible days and rate
+    Test Data: 10 days × ₹2,000
+    Expected: Amount = ₹20,000
+    Actual: ______
+
+  Row 236 | TestID: LE-017 | Status: Fail
+    Module: Leave Encashment
+    Feature: Tax
+    Scenario: Verify tax percentage
+    Steps: Apply configured tax rate
+    Test Data: ₹20,000 at 10%
+    Expected: Tax = ₹2,000
+    Actual: ______
+
+  Row 238 | TestID: LE-018 | Status: Fail
+    Module: Leave Encashment
+    Feature: Calculation
+    Scenario: Verify rate based on salary
+    Steps: Compare salary and encashment basis
+    Test Data: Basic/Gross salary
+    Expected: Correct salary component is used
+    Actual: ______
+
+  Row 240 | TestID: LE-019 | Status: Fail
+    Module: Leave Encashment
+    Feature: Balance
+    Scenario: Verify balance after approval
+    Steps: Approve encashment
+    Test Data: 5 days
+    Expected: Encashable leave balance decreases correctly
+    Actual: ______
+
+  Row 244 | TestID: LE-020 | Status: Fail
+    Module: Leave Encashment
+    Feature: Approval
+    Scenario: Verify request submission
+    Steps: Submit valid encashment request
+    Test Data: Valid data
+    Expected: Request is created with Pending status
+    Actual: ______
+
+  Row 249 | TestID: LE-021 | Status: Fail
+    Module: Leave Encashment
+    Feature: Status
+    Scenario: Verify status transition
+    Steps: Submit → Approve
+    Test Data: Valid request
+    Expected: Pending → Approved transition occurs correctly
+    Actual: ______
+
+  Row 252 | TestID: LE-022 | Status: Fail
+    Module: Leave Encashment
+    Feature: Actions
+    Scenario: Verify Actions menu
+    Steps: Click Actions for request
+    Test Data: Existing request
+    Expected: Available actions are displayed
+    Actual: ______
+
+  Row 257 | TestID: LE-023 | Status: Fail
+    Module: Leave Encashment
+    Feature: Search/Filter
+    Scenario: Search employee
+    Steps: Search by employee name/code
+    Test Data: EMP001
+    Expected: Matching requests are displayed
+    Actual: ______
+
+  Row 258 | TestID: LE-024 | Status: Fail
+    Module: Leave Encashment
+    Feature: Employee
+    Scenario: Verify employee leave balance
+    Steps: Approve encashment → check employee balance
+    Test Data: 5 days
+    Expected: Encashment is reflected correctly
+    Actual: ______
+
+  Row 259 | TestID: LE-025 | Status: Fail
+    Module: Leave Encashment
+    Feature: Payroll
+    Scenario: Verify payroll integration
+    Steps: Approve encashment → process payroll
+    Test Data: ₹7,500
+    Expected: Encashment amount appears in appropriate payroll component
+    Actual: ______
+
+  Row 261 | TestID: LE-026 | Status: Fail
+    Module: Leave Encashment
+    Feature: Employee Dashboard
+    Scenario: Verify balance update
+    Steps: Approve encashment → check ESS
+    Test Data: Employee
+    Expected: Updated leave balance is displayed
+    Actual: ______
+
+  Row 262 | TestID: LE-027 | Status: Fail
+    Module: Leave Encashment
+    Feature: Notifications
+    Scenario: Verify submission notification
+    Steps: Submit request
+    Test Data: Valid request
+    Expected: Employee/approver receives notification
+    Actual: ______
+
+  Row 263 | TestID: LE-028 | Status: Fail
+    Module: Leave Encashment
+    Feature: Notifications
+    Scenario: Verify approval notification
+    Steps: Approve request
+    Test Data: Valid request
+    Expected: Employee receives approval notification
+    Actual: ______
+
+  Row 264 | TestID: LE-029 | Status: Fail
+    Module: Leave Encashment
+    Feature: Audit
+    Scenario: Verify audit trail
+    Steps: Submit/approve/reject request
+    Test Data: Valid request
+    Expected: User, action, date/time and status change are logged
+    Actual: ______
+
+  Row 268 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 273 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Results
+    Actual: Actual Results
+
+  Row 288 | TestID: LPS-004 | Status: Fail
+    Module: Leave Module
+    Feature: Policy Title
+    Scenario: Enter valid title
+    Steps: Enter policy title
+    Test Data: Annual Leave Policy
+    Expected: Value is accepted
+    Actual: Company ID is required 
+
+  Row 299 | TestID: LPS-006 | Status: Fail
+    Module: Leave Module
+    Feature: Description
+    Scenario: Enter valid description
+    Steps: Enter description
+    Test Data: "Rules governing annual leave eligibility."
+    Expected: Description is accepted
+    Actual: ______
+
+  Row 319 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 320 | TestID: LPS-009 | Status: Fail
+    Module: Leave Module
+    Feature: Policy CRUD
+    Scenario: Verify newly created policy in list
+    Steps: Create policy → return to list
+    Test Data: Annual Leave Policy
+    Expected: New policy appears in list
+    Actual: Failed to create new policy / Company ID is required
+
+  Row 402 | TestID: PR-002 | Status: Fail
+    Module: Leave Module
+    Feature: Rule Name
+    Scenario: Enter valid rule name
+    Steps: Enter rule name
+    Test Data: Standard Annual Leave Rule
+    Expected: Value is accepted
+    Actual: —
+
+  Row 421 | TestID: PR-007 | Status: Fail
+    Module: Leave Module
+    Feature: Branch & Department
+    Scenario: Verify department filtering
+    Steps: Select branch → open department
+    Test Data: Bangalore
+    Expected: Departments belonging to selected branch are displayed if filtering is configured
+    Actual: Failed to display departments related to selected branch
+
+  Row 459 | TestID: PR-016 | Status: Fail
+    Module: Leave Module
+    Feature: Carry Forward
+    Scenario: Enter maximum carry-forward days
+    Steps: Enter value
+    Test Data: 10.0
+    Expected: Value accepted
+    Actual: Company ID is required
+
+  Row 469 | TestID: PR-018 | Status: Fail
+    Module: Leave Module
+    Feature: Rule Settings
+    Scenario: Enable all settings
+    Steps: Turn all toggles ON → Create
+    Test Data: All ON
+    Expected: Rule is created successfully and all settings persist
+    Actual: Company ID is required
+
+  Row 475 | TestID: PR-019 | Status: Fail
+    Module: Leave Module
+    Feature: Create Rule
+    Scenario: Create rule with minimum valid data
+    Steps: Fill required fields → Create
+    Test Data: Valid data
+    Expected: Rule created successfully
+    Actual: Company ID is required
+
+  Row 481 | TestID: PR-020 | Status: Fail
+    Module: Leave Module
+    Feature: Rule List
+    Scenario: Verify newly created rule
+    Steps: Create rule
+    Test Data: Rule A
+    Expected: Rule appears in list
+    Actual: Company ID is required
+
+  Row 489 | TestID: PR-021 | Status: Fail
+    Module: Leave Module
+    Feature: Rule CRUD
+    Scenario: Edit existing rule
+    Steps: Click Edit
+    Test Data: Rule A
+    Expected: Existing values populate correctly
+    Actual: —
+
+  Row 512 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 523 | TestID: LTM-003 | Status: Fail
+    Module: Leave
+    Feature: Policy Rule Mapping
+    Scenario: Verify selected rule context
+    Steps: Select Rule A
+    Test Data: Rule A
+    Expected: Mapping section displays data belonging to Rule A
+    Actual: —
+
+  Row 723 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario 
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 774 | TestID: LT-009 | Status: Fail
+    Module: Leave
+    Feature: View
+    Scenario: View leave type
+    Steps: Click View
+    Test Data: Casual Leave
+    Expected: Complete leave type details are displayed
+    Actual: view action is not displayed
+
+  Row 775 | TestID: LT-010 | Status: Fail
+    Module: Leave
+    Feature: Edit
+    Scenario: Edit leave type name
+    Steps: Click Edit → change name → save
+    Test Data: Casual → Casual Leave Updated
+    Expected: Updated name appears in list
+    Actual: Failed to edit
+
+  Row 780 | TestID: LT-011 | Status: Fail
+    Module: Leave
+    Feature: Delete
+    Scenario: Delete leave type
+    Steps: Click Delete
+    Test Data: Test Leave
+    Expected: Confirmation dialog appears
+    Actual: confirmation dialog failed to appear
+
+  Row 791 | TestID: LT-014 | Status: Fail
+    Module: Leave
+    Feature: Policy Rule
+    Scenario: Verify mapped leave type
+    Steps: Create leave type → map to policy rule
+    Test Data: CL
+    Expected: Leave type can be mapped successfully
+    Actual: —
+
+  Row 816 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+================================================================================
+SHEET: Attendance Module
+================================================================================
+
+--- Section: LEFT (3boxeshrms.com) ---
+
+  Row 14 | TestID: ATT-004 | Status: Fail
+    Module: Attendance
+    Feature: Navigation
+    Scenario: Switch between tabs
+    Steps: Admin View → My Attendance → Admin View
+    Test Data: N/A
+    Expected: Navigation works without errors
+    Actual: —
+
+  Row 103 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+--- Section: RIGHT (marqaitechgroup) ---
+
+  Row 6 | TestID: ATT-EMP-002 | Status: Fail
+    Module: Attendance
+    Feature: Check In
+    Scenario: Verify check-in time
+    Steps: Click Check In → Observe attendance details
+    Test Data: Current time
+    Expected: Correct check-in time is recorded
+    Actual: Failed to fetch
+
+  Row 7 | TestID: ATT-EMP-003 | Status: Fail
+    Module: Attendance
+    Feature: Check Out
+    Scenario: Verify check-out time
+    Steps: Check in → Check out → Observe details
+    Test Data: Current time
+    Expected: Correct check-out time is recorded
+    Actual: Check-out button is disabled
+
+  Row 11 | TestID: ATT-EMP-006 | Status: Fail
+    Module: Attendance
+    Feature: Dashboard
+    Scenario: Verify button state after check-in
+    Steps: Click Check In
+    Test Data: Current day
+    Expected: Check-in button changes state appropriately and checkout becomes available
+    Actual: —
+
+  Row 13 | TestID: ATT-EMP-007 | Status: Fail
+    Module: Attendance
+    Feature: Metrics
+    Scenario: Verify Check In metric
+    Steps: Open dashboard
+    Test Data: Employee with attendance
+    Expected: Check-in metric displays recorded check-in time/status
+    Actual: —
+
+  Row 114 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 130 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 165 | TestID: AHR-015 | Status: Fail
+    Module: Attendance
+    Feature: Data Integrity
+    Scenario: Verify request creates correct attendance record
+    Steps: Submit valid Regularization request → check attendance/request records
+    Test Data: EMP00125, 20-Aug-2026, Check-in, 09:30 AM
+    Expected: Record is created against the correct employee, date, punch type and time
+    Actual: Failed to create/Employee record not found
+
+  Row 172 | TestID: ARL-004 | Status: Fail
+    Module: Request Regularization
+    Feature: Submit Request Button
+    Scenario: Submit valid Request
+    Steps: Fill all mandatory fields → Submit Request
+    Test Data: _____
+    Expected: Regularization Request successfully submitted
+    Actual: Employee record not found
+
+  Row 189 | TestID: Test ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 199 | TestID: AHR-PER-004 | Status: Fail
+    Module: Attendance
+    Feature: Validation
+    Scenario: Submit without start time
+    Steps: Fill date/end time/reason → Submit
+    Test Data: Date + 11:00 AM + reason
+    Expected: Start time required validation is displayed
+    Actual: Failed to display validation message/Employee record not found
+
+  Row 211 | TestID: AHR-PER-007 | Status: Fail
+    Module: Attendance
+    Feature: Permission
+    Scenario: Submit with all valid details
+    Steps: Select employee → date → start time → end time → reason → Submit
+    Test Data: EMP001, 20-Aug-2026, 10:00–11:00 AM, “Personal appointment”
+    Expected: Permission request is submitted successfully
+    Actual: Employee record not found
+
+  Row 246 | TestID: HPL-005 | Status: Fail
+    Module: Apply Permission
+    Feature: Submit Request Button
+    Scenario: Submit valid Request
+    Steps: Fill all mandatory fields → Submit Request
+    Test Data: _____
+    Expected: Regularization Request successfully submitted
+    Actual: Employee record not found
+
+  Row 265 | TestID: Test ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 285 | TestID: AHR-GP-007 | Status: Fail
+    Module: Attendance
+    Feature: Gate Pass
+    Scenario: Submit valid Gate Pass request
+    Steps: Select employee → date → out time → return time → reason → submit
+    Test Data: EMP001 / 24-Aug-2026 / 11:00 AM / 1:00 PM / Personal work
+    Expected: Gate Pass request is successfully submitted
+    Actual: Invalid gatepass type
+
+  Row 286 | TestID: AHR-GP-008 | Status: Fail
+    Module: Attendance
+    Feature: Validation
+    Scenario: Submit completely empty form
+    Steps: Open Gate Pass → Click Submit
+    Test Data: No data
+    Expected: Validation messages are displayed for all mandatory fields
+    Actual: Invalid gatepass type
+
+  Row 318 | TestID: Test ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 340 | TestID: GP-012 | Status: Fail
+    Module: Gate Pass
+    Feature: Submission
+    Scenario: Submit valid Early Departure request
+    Steps: Select type → date/time → reason → Submit
+    Test Data: Early Departure / 26-Aug / 4:00 PM / Doctor appointment
+    Expected: Request is successfully submitted
+    Actual: Employee record not found
+
+  Row 343 | TestID: GP-013 | Status: Fail
+    Module: Gate Pass
+    Feature: Visitor Name
+    Scenario: Verify entering numeric values & special characters
+    Steps: Enter 123 & @#$
+    Test Data: 123 & @#$
+    Expected: Validation messages are displayed 
+    Actual: Input/character restriction should be set, Accepting numeric values & special characters, Validation message: "Please Enter valid name"
+
+  Row 350 | TestID: GP-016 | Status: Fail
+    Module: Gate Pass
+    Feature: List
+    Scenario: Verify request appears in list
+    Steps: Submit valid request → view list
+    Test Data: Valid request
+    Expected: New request appears in gate-pass list
+    Actual: Failed to display newly created gate pass in list
+
+  Row 359 | TestID: GP-017 | Status: Fail
+    Module: Gate Pass
+    Feature: Actions
+    Scenario: Verify Actions menu
+    Steps: Click Actions for a request
+    Test Data: Existing request
+    Expected: Available actions are displayed according to user permission/status
+    Actual: List is not displayed, Actions Failed to display
+
+  Row 370 | TestID: GP-021 | Status: Fail
+    Module: Business Rule
+    Feature: Gate Pass
+    Scenario: Gate-out before requested time
+    Steps: Attempt gate-out before permitted time
+    Test Data: Requested 4 PM / Out 3 PM
+    Expected: System handles according to configured policy
+    Actual: Employee record not found
+
+  Row 377 | TestID: GP-025 | Status: Fail
+    Module: Security
+    Feature: Visitor
+    Scenario: Verify visitor information
+    Steps: Select Visitor type
+    Test Data: Visitor request
+    Expected: System should capture required visitor details before submission
+    Actual: Employee record not found
+
+  Row 379 | TestID: GP-026 | Status: Fail
+    Module: Security
+    Feature: Contractor
+    Scenario: Verify contractor information
+    Steps: Select Contractor
+    Test Data: Contractor details
+    Expected: Required contractor details are captured and validated
+    Actual: Employee record not found
+
+  Row 380 | TestID: GP-027 | Status: Fail
+    Module: Notifications
+    Feature: Gate Pass
+    Scenario: Verify submission notification
+    Steps: Submit request
+    Test Data: Valid request
+    Expected: Appropriate manager/concerned users receive notification
+    Actual: Employee record not found
+
+  Row 383 | TestID: GP-028 | Status: Fail
+    Module: Audit
+    Feature: Gate Pass
+    Scenario: Verify audit trail
+    Steps: Submit → approve → security out → security in
+    Test Data: Request lifecycle
+    Expected: All important actions and timestamps are recorded
+    Actual: _____
+
+  Row 384 | TestID: GP-029 | Status: Fail
+    Module: Data Integrity
+    Feature: Gate Pass
+    Scenario: Verify request persistence
+    Steps: Submit request → refresh page
+    Test Data: Valid request
+    Expected: Request remains available with correct information
+    Actual: _____
+
+  Row 395 | TestID: Test ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 419 | TestID: AHR-OT-012 | Status: Fail
+    Module: Overtime
+    Feature: Submission
+    Scenario: Submit valid OT request
+    Steps: Select employee → date → start time → end time → reason → Submit
+    Test Data: EMP001 / 24-Aug / 6–8 PM / Deployment support
+    Expected: Overtime request is successfully submitted
+    Actual: Employee record not found
+
+  Row 436 | TestID: AHR-OT-018 | Status: Fail
+    Module: Data Integrity
+    Feature: Overtime
+    Scenario: Verify submitted OT details
+    Steps: Submit request → Open attendance/request history
+    Test Data: EMP001 / 24-Aug / 6–8 PM
+    Expected: Employee, date, times and reason are stored correctly
+    Actual: _____
+
+  Row 437 | TestID: AHR-OT-019 | Status: Fail
+    Module: Attendance Integration
+    Feature: Overtime
+    Scenario: Verify OT reflects in attendance
+    Steps: Submit approved OT → Check attendance
+    Test Data: 6–8 PM
+    Expected: OT hours are reflected correctly in attendance records
+    Actual: _____
+
+  Row 438 | TestID: AHR-OT-020 | Status: Fail
+    Module: Payroll Integration
+    Feature: Overtime
+    Scenario: Verify approved OT payroll impact
+    Steps: Approve OT → Check payroll calculation
+    Test Data: 2 OT hours
+    Expected: OT is included in payroll calculation according to configured OT policy
+    Actual: _____
+
+  Row 439 | TestID: AHR-OT-021 | Status: Fail
+    Module: Notifications
+    Feature: Overtime
+    Scenario: Verify submission notification
+    Steps: Submit valid OT request
+    Test Data: Valid request
+    Expected: Relevant manager/approver receives notification according to settings
+    Actual: _____
+
+  Row 440 | TestID: AHR-OT-022 | Status: Fail
+    Module: Audit
+    Feature: Overtime
+    Scenario: Verify audit trail
+    Steps: Submit OT as HR → Open audit/history
+    Test Data: HR User + EMP001
+    Expected: System records HR user, employee, date/time and request details
+    Actual: _____
+
+  Row 455 | TestID: Test ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 536 | TestID: Test ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 593 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Feature
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 646 | TestID: Test_ID | Status: Status(Pass/Fail)
+    Module: Module
+    Feature: Sub-module
+    Scenario: Test Scenario
+    Steps: Test Steps
+    Test Data: Test Data
+    Expected: Expected Result
+    Actual: Actual Result
+
+  Row 661 | TestID: HOL-005 | Status: Fail
+    Module: Holiday Master
+    Feature: Business Rule
+    Scenario: Verify past holiday creation (if restricted)
+    Steps: Select past date
+    Test Data: 2024-01-01 00:00:00
+    Expected: System behaves according to business rule (allow or restrict)
+    Actual: Restriction Failed, allows past date holiday creation. to create Holiday
