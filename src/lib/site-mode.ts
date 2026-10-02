@@ -35,12 +35,6 @@
  *   - Hidden tenant: 'marqaitechgroup'
  */
 
-// ─── Demo domain list (must match middleware.ts & tenant-db.ts) ────────
-// IMPORTANT: 3boxeshrms.vercel.app is the LIVE platform's Vercel deployment
-// URL — it must NOT be in DEMO_DOMAINS. Previously its presence here caused
-// isLiveMode() to return 'demo' when Vercel internally routed API requests
-// through the deployment URL, leaking "Marq AI Tech Pvt Ltd" into the
-// company switcher. See tenant-filter.ts for the FOOLPROOF backstop.
 const DEMO_DOMAINS = [
   'nexus-hrms-mu.vercel.app',
   'nexus-hrms.vercel.app',
@@ -50,42 +44,22 @@ const DEMO_DOMAINS = [
 
 const ROOT_DOMAIN = process.env.NEXT_PUBLIC_ROOT_DOMAIN || '3boxeshrms.com';
 
-/** Dedicated QA/test host. It uses the same tenant login identities as production. */
+/** Dedicated QA/test host. It is tenant-neutral: no production tenant is forced. */
 export const TEST_PLATFORM_HOST = 'test.3boxeshrms.com';
-export const TEST_TENANT_SLUG = process.env.TEST_TENANT_SLUG || 'marqaitechgroup';
 
 export function isTestPlatformHostname(hostname: string): boolean {
   return hostname.split(':')[0].toLowerCase() === TEST_PLATFORM_HOST;
 }
 
-// ─── Environment Variable Override (PERMANENT FIX) ────────────────────
-// SITE_MODE env var takes ABSOLUTE precedence. Set in Vercel:
-//   - 3boxeshrms.com deployment: SITE_MODE=live
-//   - nexus-hrms-mu.vercel.app deployment: SITE_MODE=demo
-// This ensures correct mode even if Vercel routes requests internally
-// through deployment URLs that happen to be in DEMO_DOMAINS.
 const ENV_SITE_MODE = (process.env.SITE_MODE || '').toLowerCase() as SiteMode | '';
-
-// ─── Server-side detection ─────────────────────────────────────────────
 
 export type SiteMode = 'live' | 'demo';
 
-/**
- * Detect the site mode from a Request object (server-side).
- *
- * PRIORITY:
- *   1. SITE_MODE env var — if set to 'live' or 'demo', ALWAYS use it
- *   2. Host header — fallback detection
- *
- * Returns 'demo' for demo domains, 'live' for everything else.
- */
 export function getSiteMode(request: Request): SiteMode {
-  // ─── PRIORITY 1: Environment variable (PERMANENT FIX) ───
   if (ENV_SITE_MODE === 'live' || ENV_SITE_MODE === 'demo') {
     return ENV_SITE_MODE;
   }
 
-  // ─── PRIORITY 2: Host header detection (fallback) ───
   const host = request.headers.get('x-tenant-domain') || request.headers.get('host') || '';
   const hostname = host.split(':')[0].toLowerCase();
 
@@ -93,56 +67,28 @@ export function getSiteMode(request: Request): SiteMode {
     return 'demo';
   }
 
-  // Any *.vercel.app that isn't the root platform → treat as demo
-  // (matches middleware's fallback behavior)
   if (hostname.endsWith('.vercel.app') && !hostname.includes('3boxeshrms.com')) {
     return 'demo';
   }
 
-  // Everything else is LIVE:
-  // - 3boxeshrms.com (platform root)
-  // - *.3boxeshrms.com (tenant subdomains)
-  // - localhost / custom domains
   return 'live';
 }
 
-/**
- * Check if the current request is in LIVE mode (server-side).
- * LIVE = production platform with real data only.
- */
 export function isLiveMode(request: Request): boolean {
   return getSiteMode(request) === 'live';
 }
 
-/**
- * Check if the current request is in DEMO mode (server-side).
- * DEMO = showcase site with sample/dummy data.
- */
 export function isDemoMode(request: Request): boolean {
   return getSiteMode(request) === 'demo';
 }
 
-// ─── Client-side detection ─────────────────────────────────────────────
-
-/**
- * Detect the site mode from the browser's current hostname (client-side).
- * Safe to call in useEffect or event handlers.
- *
- * PRIORITY:
- *   1. NEXT_PUBLIC_SITE_MODE env var — if set, ALWAYS use it
- *   2. window.location.hostname — fallback detection
- *
- * Returns 'demo' for demo domains, 'live' for everything else.
- */
 export function getClientSiteMode(): SiteMode {
-  // ─── PRIORITY 1: Environment variable (PERMANENT FIX) ───
   const clientEnvMode = (process.env.NEXT_PUBLIC_SITE_MODE || '').toLowerCase();
   if (clientEnvMode === 'live' || clientEnvMode === 'demo') {
     return clientEnvMode as SiteMode;
   }
 
-  // ─── PRIORITY 2: Hostname detection (fallback) ───
-  if (typeof window === 'undefined') return 'live'; // SSR default
+  if (typeof window === 'undefined') return 'live';
 
   const hostname = window.location.hostname.toLowerCase();
 
@@ -150,7 +96,6 @@ export function getClientSiteMode(): SiteMode {
     return 'demo';
   }
 
-  // Any *.vercel.app that isn't the root platform → treat as demo
   if (hostname.endsWith('.vercel.app') && !hostname.includes('3boxeshrms.com')) {
     return 'demo';
   }
@@ -158,40 +103,22 @@ export function getClientSiteMode(): SiteMode {
   return 'live';
 }
 
-/**
- * Check if the browser is on a LIVE site (client-side).
- */
 export function isClientLiveMode(): boolean {
   return getClientSiteMode() === 'live';
 }
 
-/**
- * Check if the browser is on a DEMO site (client-side).
- */
 export function isClientDemoMode(): boolean {
   return getClientSiteMode() === 'demo';
 }
 
-/**
- * Check if a tenant slug corresponds to the demo tenant.
- * The demo tenant (3boxes-hrms-demo) is the ONLY tenant that
- * should have dummy/sample data on the LIVE platform.
- */
 export function isDemoTenant(slug: string): boolean {
   return slug === '3boxes-hrms-demo';
 }
 
-/** Canonical demo tenant slug — must match middleware DEMO_SLUG and seed-demo TENANT_SLUG. */
 export const DEMO_TENANT_SLUG = '3boxes-hrms-demo';
 
-/** Vercel URLs that host the LIVE platform (not the demo showcase). */
 const LIVE_VERCEL_HOSTS = ['3boxeshrms.vercel.app'];
 
-/**
- * True for Vercel deployment hostnames that should use the demo tenant.
- * Includes per-deployment URLs like 3boxes-hrms-kvfm0lwlv-3-boxes-hrms.vercel.app.
- * Excludes the live platform deployment at 3boxeshrms.vercel.app.
- */
 export function isVercelDemoHostname(hostname: string): boolean {
   const h = hostname.split(':')[0].toLowerCase();
   if (LIVE_VERCEL_HOSTS.includes(h)) return false;
@@ -200,15 +127,11 @@ export function isVercelDemoHostname(hostname: string): boolean {
 
 /**
  * Normalize a tenant slug for the current host.
- * Explicit ?tenant= slugs (e.g. sdlglobe, tcs) are never overridden.
+ * The QA/test host is intentionally tenant-neutral: preserve any explicit
+ * tenant context supplied by middleware/query instead of forcing Marqaitech.
  */
 export function resolveTenantSlugForHost(slug: string, hostname: string): string {
-  const h = hostname.split(':')[0].toLowerCase();
-
-  // QA/test host uses the production MarqAI tenant identity by default.
-  // Override with TEST_TENANT_SLUG when the test deployment has a separate
-  // tenant database containing the same test credentials/data.
-  if (isTestPlatformHostname(h)) return TEST_TENANT_SLUG;
+  if (isTestPlatformHostname(hostname)) return slug;
 
   if (slug && slug !== DEMO_TENANT_SLUG && slug !== '3boxes-hrms') {
     return slug;
@@ -218,10 +141,6 @@ export function resolveTenantSlugForHost(slug: string, hostname: string): string
   return slug;
 }
 
-/**
- * Check if a tenant slug is a production (non-demo) tenant.
- * These tenants should NEVER have dummy/sample data.
- */
 export function isProductionTenant(slug: string): boolean {
   return !!slug && slug !== '3boxes-hrms-demo';
 }
