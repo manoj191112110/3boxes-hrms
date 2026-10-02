@@ -50,6 +50,14 @@ const DEMO_DOMAINS = [
 
 const ROOT_DOMAIN = process.env.NEXT_PUBLIC_ROOT_DOMAIN || '3boxeshrms.com';
 
+/** Dedicated QA/test host. It uses the same tenant login identities as production. */
+export const TEST_PLATFORM_HOST = 'test.3boxeshrms.com';
+export const TEST_TENANT_SLUG = process.env.TEST_TENANT_SLUG || 'marqaitechgroup';
+
+export function isTestPlatformHostname(hostname: string): boolean {
+  return hostname.split(':')[0].toLowerCase() === TEST_PLATFORM_HOST;
+}
+
 // ─── Environment Variable Override (PERMANENT FIX) ────────────────────
 // SITE_MODE env var takes ABSOLUTE precedence. Set in Vercel:
 //   - 3boxeshrms.com deployment: SITE_MODE=live
@@ -195,6 +203,13 @@ export function isVercelDemoHostname(hostname: string): boolean {
  * Explicit ?tenant= slugs (e.g. sdlglobe, tcs) are never overridden.
  */
 export function resolveTenantSlugForHost(slug: string, hostname: string): string {
+  const h = hostname.split(':')[0].toLowerCase();
+
+  // QA/test host uses the production MarqAI tenant identity by default.
+  // Override with TEST_TENANT_SLUG when the test deployment has a separate
+  // tenant database containing the same test credentials/data.
+  if (isTestPlatformHostname(h)) return TEST_TENANT_SLUG;
+
   if (slug && slug !== DEMO_TENANT_SLUG && slug !== '3boxes-hrms') {
     return slug;
   }
