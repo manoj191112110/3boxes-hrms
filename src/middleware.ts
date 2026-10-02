@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { DEMO_TENANT_SLUG, isVercelDemoHostname } from '@/lib/site-mode'
+import { DEMO_TENANT_SLUG, TEST_TENANT_SLUG, isTestPlatformHostname, isVercelDemoHostname } from '@/lib/site-mode'
 
 /**
  * Combined middleware: i18n locale detection + tenant detection.
@@ -91,6 +91,12 @@ function extractTenantSlug(request: NextRequest): string {
   // Explicit ?tenant= (e.g. sdlglobe, tcs) wins on any host — including demo Vercel.
   if (fromQuery && fromQuery !== DEMO_SLUG) {
     return fromQuery;
+  }
+
+  // Dedicated QA/test host uses the production MarqAI tenant identity.
+  // This keeps test login credentials aligned with the production tenant.
+  if (isTestPlatformHostname(hostname)) {
+    return TEST_TENANT_SLUG;
   }
 
   // Demo domain detection — default demo tenant when no explicit ?tenant=
