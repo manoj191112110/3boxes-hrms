@@ -7,6 +7,7 @@ import {
   isDemoTenant,
   isVercelDemoHostname,
   resolveTenantSlugForHost,
+  isTestPlatformHostname,
 } from '@/lib/site-mode';
 import { getServerHiddenSlugs, LIVE_HIDDEN_SLUGS, DEMO_HIDDEN_SLUGS } from '@/lib/tenant-filter';
 
@@ -56,6 +57,7 @@ export async function POST(request: Request) {
     const tenantSlugHeader = request.headers.get('x-tenant-slug') || '';
     const hostHeader = (request.headers.get('x-tenant-domain') || request.headers.get('host') || '').split(':')[0].toLowerCase();
     const isVercelDemoHost = isVercelDemoHostname(hostHeader);
+    const isTestHost = isTestPlatformHostname(hostHeader);
     // Host is authoritative: Vercel deployment URLs always map to demo tenant
     const tenantSlug = resolveTenantSlugForHost(tenantSlugHeader, hostHeader);
     let subdomainTenantId: string | null = null;
@@ -229,7 +231,8 @@ export async function POST(request: Request) {
     //         allows ALL roles including super_admin, tenant_admin, hr_admin, etc.
     //         with complete dummy/sample data for every module.
     const isDemoDomain = isDemoMode(request) || isDemoTenant(tenantSlug) || isVercelDemoHost;
-    const isMainDomain = !tenantSlug; // No tenant slug = main platform domain
+    const isTestDomain = isTestHost;
+    const isMainDomain = !tenantSlug && !isTestDomain; // Test host has tenant context
 
     // Rule 0: Main domain is super_admin ONLY
     if (isMainDomain && user.role !== 'super_admin') {
@@ -250,7 +253,7 @@ export async function POST(request: Request) {
     }
 
     // Rule 1: Super admin on tenant subdomain (not demo) — reject
-    if (user.role === 'super_admin' && tenantSlug && !isDemoDomain) {
+    if (user.role === 'super_admin' && tenantSlug && !isDemoDomain && !isTestDomain) {
       return NextResponse.json(
         { error: 'Super admin login is only available at 3boxeshrms.com/login. Please use the platform login page.' },
         { status: 403, headers: corsHeaders() }
